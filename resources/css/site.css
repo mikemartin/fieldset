@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'Nexa';
+  src: url('../fonts/NexaBlack.woff2') format('woff2'), url('../fonts/NexaBlack.woff') format('woff');
+}
+
+.fade:after {
+  content:'';
+  @apply absolute inset-0 pointer-events-none;
+  background:linear-gradient(to bottom,rgba(0,0,0,1) 0%,rgba(0,0,0,0) 33%,rgba(0,0,0,1) 100%);
+}
+
+.scroll {
+  animation-name: scrollSmall;
+  animation-duration: 25s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@screen lg {
+  .scroll {
+    animation-name: scrollLarge;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform-origin:50% 100%;
+  }
+}
+
+@keyframes scrollSmall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-2508px);
+  }
+}
+
+@keyframes scrollLarge {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-3432px);
+  }
+}

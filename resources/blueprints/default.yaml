@@ -1,0 +1,19 @@
+title: Default
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: code
+        field:
+          theme: material
+          mode: htmlmixed
+          indent_type: tabs
+          indent_size: 4
+          key_map: default
+          line_numbers: true
+          line_wrapping: true
+          type: code
+          localizable: false
+          listable: hidden
+          display: Code
