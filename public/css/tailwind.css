@@ -623,6 +623,10 @@ video {
           animation-iteration-count: infinite;
 }
 
+[x-cloak] {
+  display: none;
+}
+
 @media (min-width: 1024px) {
   .scroll {
     -webkit-animation-name: scrollLarge;

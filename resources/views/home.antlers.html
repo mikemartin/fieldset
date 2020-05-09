@@ -1,13 +1,23 @@
-<div class="absolute inset-y-0 mx-auto w-full h-full lg:w-2/3 fade overflow-hidden">
-  <pre class="scroll font-mono text-pink opacity-50 text-xs lg:text-base leading-relaxed">{{ loop times="4" }}{{ code }}{{/loop}}</pre>
+<div
+  x-show="codeVisible"
+  x-transition:enter="ease-out duration-1000"
+  x-transition:enter-start="opacity-0"
+  x-transition:enter-end="opacity-100"
+  class="absolute inset-y-0 mx-auto w-full lg:w-2/3 h-full overflow-hidden transition-opacity fade">
+  <pre class="font-mono text-pink text-xs lg:text-base leading-relaxed opacity-50 scroll">{{ loop times="4" }}{{ code }}{{/loop}}</pre>
 </div>
 
-<div class="relative pb-16">
-    {{ svg:fieldset class="w-full max-w-xs lg:max-w-sm text-white" }}
-    <div class="mt-6 tracking-wider font-display uppercase text-sm lg:text-base text-center text-white lg:text-left">
-      Fieldsets, blueprints &<br class="lg:hidden"/> forms for
-      <a href="https://statamic.com" class="group text-pink hover:text-white text-base lg:text-lg">
-        {<span class="text-white text-sm lg:text-base group-hover:text-pink">Statamic</span>}
-      </a>
-    </div>
+<div
+  x-show="logoVisible"
+  x-transition:enter="ease-out duration-1000"
+  x-transition:enter-start="opacity-0 translate-y-4 scale-95"
+  x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+  class="relative pb-16 transform transition-all">
+  {{ svg:fieldset class="w-full max-w-xs lg:max-w-sm text-white" }}
+  <div class="mt-6 tracking-wider font-display uppercase text-white text-sm lg:text-base text-center lg:text-left">
+    Fieldsets, blueprints &<br class="lg:hidden"/> forms for
+    <a href="https://statamic.com" class="text-pink hover:text-white text-base lg:text-lg group">
+      {<span class="text-white text-sm lg:text-base group-hover:text-pink">Statamic</span>}
+    </a>
+  </div>
 </div>

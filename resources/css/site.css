@@ -16,6 +16,10 @@
   animation-iteration-count: infinite;
 }
 
+[x-cloak] {
+  @apply hidden;
+}
+
 @screen lg {
   .scroll {
     animation-name: scrollLarge;

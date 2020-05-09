@@ -7,9 +7,12 @@
         <title>field:set | Fieldsets, blueprints & forms for Statamic</title>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
         <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
-        <script src="{{ mix src='/js/site.js' }}"></script>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer=""></script>
     </head>
-    <body class="antialiased bg-black font-sans leading-normal">
+    <body
+      class="antialiased bg-black font-sans leading-normal"
+      x-data="{ logoVisible: false, codeVisible: false }"
+      x-init="setTimeout(() => { logoVisible = true }, 2000), setTimeout(() => { codeVisible = true }, 1000)">
         <div class="mx-auto px-1 lg:px-2 h-screen flex items-center justify-center relative">
             {{ template_content }}
         </div>
