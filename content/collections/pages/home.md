@@ -117,7 +117,7 @@ code: |
             if:
               social_image: 'equals custom'
 subtitle: 'Blueprints, fieldsets & forms for {statamic}'
-description: 'Content modeling resources <br class="hidden lg:block"/>for your Statamic projects<span class="text-pink">.</span>'
+description: 'Content modeling resources <br/>for your Statamic projects<span class="text-pink">.</span>'
 social_image: custom
 form: subscribe
 meta_title: custom

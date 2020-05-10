@@ -6,16 +6,16 @@
   x-transition:enter-end="opacity-100 translate-y-0 scale-100"
   x-init="setTimeout(() => { subscribeVisible = true  }, 1500), setTimeout(() => { $refs.idea.focus() }, 1600)">
   <div class="mt-10 lg:mt-0 mx-auto max-w-sm">
-    <p class="lg:-mt-5 tracking-wider font-display uppercase text-pink leading-4 lg:leading-5 text-xs lg:text-base">
+    <p class="lg:-mt-5 tracking-wider font-display uppercase text-pink leading-5 lg:leading-6 text-sm lg:text-base">
       {{ label }}
     </p>
-    <h2 class="mt-3 max-w-3xl text-base lg:text-2xl leading-5 lg:leading-8 text-white font-display">
+    <h2 class="mt-2 lg:mt-3 max-w-3xl text-xl lg:text-2xl leading-6 lg:leading-8 text-white font-display">
       {{ description }}
     </h2>
-    <div class="mt-4 lg:mt-6">
+    <div class="mt-5 lg:mt-6">
       {{ form:create in="subscribe" id="subscribe" x-ref="form" }}
         {{ fields }}
-          <input {{ if handle == "email" }}type="email"{{ else }}type="text"{{/if}} placeholder="{{ placeholder }}" aria-label="{{ display }}" name="{{ handle }}" x-ref="{{ handle }}" value="{{ old }}" autocomplete="off" class="{{ if first }}rounded-t-md -mb-px{{/if}} appearance-none font-display tracking-wide w-full px-5 py-3 border border-pink bg-transparent text-sm lg:text-base leading-5 lg:leading-6 text-pink placeholder-pink focus:outline-none focus:placeholder-white focus:text-white transition duration-150 ease-in-out" />
+          <input {{ if handle == "email" }}type="email"{{ else }}type="text"{{/if}} placeholder="{{ placeholder }}" aria-label="{{ display }}" name="{{ handle }}" x-ref="{{ handle }}" value="{{ old }}" autocomplete="off" class="rounded-none {{ if first }}rounded-t-md -mb-px{{/if}} appearance-none font-display tracking-wide w-full px-5 py-3 border border-pink bg-transparent text-sm lg:text-base leading-5 lg:leading-6 text-pink placeholder-pink focus:outline-none focus:placeholder-white focus:text-white transition duration-150 ease-in-out" />
         {{ /fields }}
         <button @click.prevent="submitForm($refs)" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-sm lg:text-base leading-5 lg:leading-6 font-display rounded-b-md text-white uppercase tracking-wider bg-pink hover:bg-opacity-75 focus:outline-none focus:bg-opacity-75 transition duration-150 ease-in-out">
           {{ button }}
