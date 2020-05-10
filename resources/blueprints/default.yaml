@@ -36,6 +36,7 @@ sections:
           listable: hidden
           display: Form
           max_items: 1
+          width: 50
       -
         handle: button
         field:
@@ -44,6 +45,7 @@ sections:
           localizable: false
           listable: hidden
           display: Button
+          width: 50
       -
         handle: notification_title
         field:
@@ -52,6 +54,7 @@ sections:
           localizable: false
           listable: hidden
           display: 'Notification Title'
+          width: 50
       -
         handle: notification_message
         field:
@@ -60,6 +63,7 @@ sections:
           localizable: false
           listable: hidden
           display: 'Notification Message'
+          width: 50
       -
         handle: code
         field:

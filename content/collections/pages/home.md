@@ -3,7 +3,7 @@ title: 'field:set'
 template: home
 fieldset: seo
 updated_by: ac214142-16d4-46fb-8870-576ca392afb2
-updated_at: 1589093373
+updated_at: 1589109119
 code: |
   title: Coming soon
   sections:
@@ -35,24 +35,28 @@ code: |
             type: form
             display: Form
             max_items: 1
+            width: 50
         -
           handle: button
           field:
             input_type: text
             type: text
             display: Button
+            width: 50
         -
           handle: notification_title
           field:
             input_type: text
             type: text
             display: 'Notification Title'
+            width: 50
         -
           handle: notification_message
           field:
             input_type: text
             type: text
             display: 'Notification Message'
+            width: 50
     seo:
       display: SEO
       fields:
