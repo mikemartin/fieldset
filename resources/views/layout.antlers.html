@@ -45,17 +45,12 @@
         <link rel="canonical" href="{{ site_url }}">
 
         <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
-
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer=""></script>
-        <script>
-          window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-        </script>
+        <script src="{{ mix src='/js/site.js' }}"></script>
     </head>
     <body
       class="antialiased bg-black font-sans leading-normal"
       x-data="{ logoVisible: false, codeVisible: false, success: false }"
-      x-init="setTimeout(() => { logoVisible = true }, 2000), setTimeout(() => { codeVisible = true }, 1000)">
+      x-init="setTimeout(() => { logoVisible = true }, 1000), setTimeout(() => { codeVisible = true }, 300)">
         <div
         x-show="codeVisible"
         x-transition:enter="ease-out duration-1000"

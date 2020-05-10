@@ -4,6 +4,7 @@
 /public/vendor/statamic
 /storage/*.key
 /vendor
+/storage/forms
 .env
 .env.backup
 .phpunit.result.cache

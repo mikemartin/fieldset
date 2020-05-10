@@ -1,10 +1,11 @@
-<div x-show="subscribeVisible"
-  x-data="{ subscribeVisible: false, success: false }"
+<div
+  x-show="subscribeVisible"
+  x-data="subscribe()"
   x-transition:enter="ease-out duration-1000"
   x-transition:enter-start="opacity-0 translate-y-4 scale-95"
   x-transition:enter-end="opacity-100 translate-y-0 scale-100"
-  x-init="setTimeout(() => { subscribeVisible = true  }, 3000), setTimeout(() => { $refs.idea.focus() }, 3100)">
-  <div class="mt-10 lg:mt-0 mx-auto max-w-sm transform transition-all">
+  x-init="setTimeout(() => { subscribeVisible = true  }, 1500), setTimeout(() => { $refs.idea.focus() }, 1600)">
+  <div class="mt-10 lg:mt-0 mx-auto max-w-sm">
     <p class="lg:-mt-5 tracking-wider font-display uppercase text-pink leading-4 lg:leading-5 text-xs lg:text-base">
       {{ label }}
     </p>
@@ -26,11 +27,21 @@
 </div>
 
 <script>
-  function submitForm($refs) {
-    axios.post($refs.form.action, new FormData($refs.form))
-    .then(response => {
-      console.log(response.data);
-      return this.success === true
-    });
+  function subscribe () {
+    return {
+      errors: [],
+      subscribeVisible: false,
+      success: false,
+      submitForm() {
+        axios.post(this.$refs.form.action, new FormData(this.$refs.form))
+        .then(response => {
+          if (response.data.success) {
+            this.errors = [];
+            this.success = true;
+            this.$refs.form.reset();
+          }
+        });
+      }
+    }
   }
 </script>
