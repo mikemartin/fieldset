@@ -4,17 +4,67 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>field:set | Fieldsets, blueprints & forms for Statamic</title>
+
+        {{ if meta_title == 'custom' }}
+        <title>{{ custom_meta_title }}</title>
+        <meta name="twitter:title" content="{{ custom_meta_title }}" />
+        <meta property="og:title" content="{{ custom_meta_title }}" />
+        {{ else }}
+        <title>{{ title }} // {{ site_name }}</title>
+        <meta name="twitter:title" content="{{ title }}" />
+        <meta property="og:title" content="{{ title }}" />
+        {{ /if }}
+
+        {{ if meta_description == 'custom' }}
+        <meta name="description" content="{{ custom_meta_description }}">
+        <meta name="twitter:description" content="{{ custom_meta_description }}" />
+        <meta property="og:description" content="{{ custom_meta_description }}" />
+        {{ else meta_description == 'description' }}
+        <meta name="description" content="{{ description }}">
+        <meta name="twitter:description" content="{{ description }}" />
+        <meta property="og:description" content="{{ description }}" />
+        {{ /if }}
+
+        {{ if social_image == 'custom' }}
+        {{ assets:custom_social_image }}
+        <meta property="og:image" content="{{ site_url }}{{ glide:url w='1200' h='600' }}">
+        <meta name="twitter:image" content="{{ site_url }}{{ glide:url w='1200' h='600' }}">
+        {{ /assets:custom_social_image }}
+        {{elseif social_image == 'image' }}
+        {{ assets:image }}
+        <meta property="og:image" content="{{ site_url }}{{ glide:url w='1200' h='600' }}">
+        <meta name="twitter:image" content="{{ site_url }}{{ glide:url w='1200' h='600' }}">
+        {{ /assets:image }}
+        {{ /if }}
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:url" content="{{ site_url }}" />
+        <meta property="og:type" content="article" />
+
+        <link rel="shortcut icon" href="{{ site_url }}/assets/seo/icon.png">
+        <link rel="canonical" href="{{ site_url }}">
+
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
         <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer=""></script>
+        <script>
+          window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+        </script>
     </head>
     <body
       class="antialiased bg-black font-sans leading-normal"
-      x-data="{ logoVisible: false, codeVisible: false }"
+      x-data="{ logoVisible: false, codeVisible: false, success: false }"
       x-init="setTimeout(() => { logoVisible = true }, 2000), setTimeout(() => { codeVisible = true }, 1000)">
-        <div class="mx-auto px-1 lg:px-2 h-screen flex items-center justify-center relative">
-            {{ template_content }}
+        <div
+        x-show="codeVisible"
+        x-transition:enter="ease-out duration-1000"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        class="absolute inset-y-0 w-full h-full overflow-hidden transition-opacity fade">
+          <pre class="lg:mx-auto lg:w-2/3 font-mono text-pink text-xs lg:text-base leading-relaxed opacity-50 lg:opacity-75 scroll">{{ loop times="4" }}{{ code }}{{/loop}}</pre>
         </div>
+        {{ template_content }}
     </body>
 </html>

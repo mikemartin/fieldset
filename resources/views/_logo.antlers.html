@@ -1,0 +1,15 @@
+<div
+  x-show="logoVisible"
+  x-transition:enter="ease-out duration-1000"
+  x-transition:enter-start="opacity-0 translate-y-4 scale-95"
+  x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+  class="mx-auto w-64 lg:w-full lg:max-w-lg transform transition-all">
+  <h1 class="sr-only">field:set</h1>
+  {{ svg:fieldset class="w-full lg:max-w-sm text-white" }}
+  <p class="mt-4 lg:mt-6 tracking-wider font-display uppercase text-white leading-4 lg:leading-5 text-xs lg:text-base text-right lg:text-left">
+    Blueprints, fieldsets & forms <br class="lg:hidden"/>for
+    <a href="https://statamic.com" class="text-pink hover:text-white text-base lg:text-lg group">
+      {<span class="text-white text-xs lg:text-base group-hover:text-pink">Statamic</span>}
+    </a>
+  </p>
+</div>

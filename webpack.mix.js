@@ -21,7 +21,10 @@ mix.postCss('resources/css/tailwind.css', 'public/css', [
 ]).browserSync({
   proxy: "http://fieldset.test",
   port: '8888',
-  files: ["./resources/css/**/*.css"]
+  files: [
+    "./resources/css/**/*.css",
+    "./resources/views/**/*.html"
+  ]
 });
 
 if (mix.inProduction()) {

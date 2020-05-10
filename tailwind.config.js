@@ -4,11 +4,13 @@ module.exports = {
   purge: [],
   theme: {
     colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
       white: "#FFFFFF",
       pink: "#FF269E",
       black: "#010101",
       gray: "#EFFEFF",
-      blue: "#46D9FF"
+      blue: "#46D9FF",
     },
     extend: {
       fontFamily: {
