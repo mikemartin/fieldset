@@ -1,5 +1,5 @@
 ---
-title: 'field:set'
+title: 'Field:Set'
 template: home
 fieldset: seo
 updated_by: ac214142-16d4-46fb-8870-576ca392afb2
@@ -129,7 +129,7 @@ meta_description: description
 custom_social_image: seo/share.png
 label: 'Coming soon'
 button: 'Get notified'
-custom_meta_title: 'field:set // Blueprints, fieldsets & forms for Statamic.'
+custom_meta_title: 'Field:Set // Blueprints, fieldsets & forms for Statamic.'
 notification_title: 'Thanks for your idea'
 notification_message: 'We will email you when we launch'
 id: home

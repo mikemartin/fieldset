@@ -15,9 +15,9 @@
     <div class="mt-5 lg:mt-6">
       {{ form:create in="subscribe" id="subscribe" x-ref="form" }}
         {{ fields }}
-          <input {{ if handle == "email" }}type="email"{{ else }}type="text"{{/if}} placeholder="{{ placeholder }}" aria-label="{{ display }}" name="{{ handle }}" x-ref="{{ handle }}" value="{{ old }}" autocomplete="off" class="rounded-none {{ if first }}rounded-t-md -mb-px{{/if}} appearance-none font-display tracking-wide w-full px-5 py-3 border border-pink bg-transparent text-sm lg:text-base leading-5 lg:leading-6 text-pink placeholder-pink focus:outline-none focus:placeholder-white focus:text-white transition duration-150 ease-in-out" />
+          <input {{ if handle == "email" }}type="email"{{ else }}type="text"{{/if}} placeholder="{{ placeholder }}" aria-label="{{ display }}" name="{{ handle }}" x-ref="{{ handle }}" x-model="{{ handle }}" value="{{ old }}" autocomplete="off" class="rounded-none {{ if first }}rounded-t-md -mb-px{{/if}} appearance-none font-display tracking-wide w-full px-5 py-3 border border-pink bg-transparent text-sm lg:text-base leading-5 lg:leading-6 text-pink placeholder-pink focus:outline-none focus:placeholder-white focus:text-white transition duration-150 ease-in-out" />
         {{ /fields }}
-        <button @click.prevent="submitForm($refs)" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-sm lg:text-base leading-5 lg:leading-6 font-display rounded-b-md text-white uppercase tracking-wider bg-pink hover:bg-opacity-75 focus:outline-none focus:bg-opacity-75 transition duration-150 ease-in-out">
+        <button @click.prevent="submitForm($refs)" :disabled="!email" :class="{ 'text-black': !email, 'text-white': email }" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-sm lg:text-base leading-5 lg:leading-6 font-display rounded-b-md uppercase tracking-wider bg-pink hover:bg-opacity-75 focus:outline-none focus:bg-opacity-75 transition duration-150 ease-in-out">
           {{ button }}
         </button>
       {{ /form:create }}
@@ -32,6 +32,8 @@
       errors: [],
       subscribeVisible: false,
       success: false,
+      email: '',
+      idea: '',
       submitForm() {
         axios.post(this.$refs.form.action, new FormData(this.$refs.form))
         .then(response => {

@@ -11,7 +11,7 @@ sections:
           localizable: false
           listable: hidden
           display: Idea
-          placeholder: 'Have a fieldset idea?'
+          placeholder: 'Share your content modeling idea'
       -
         handle: email
         field:
