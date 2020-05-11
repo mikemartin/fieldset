@@ -1,10 +1,11 @@
 <div
   x-show="subscribeVisible"
   x-data="subscribe()"
-  x-transition:enter="ease-out duration-1000"
+  x-transition:enter="transform transition-all ease-out duration-1000"
   x-transition:enter-start="opacity-0 translate-y-4 scale-95"
   x-transition:enter-end="opacity-100 translate-y-0 scale-100"
-  x-init="setTimeout(() => { subscribeVisible = true  }, 1500), setTimeout(() => { $refs.idea.focus() }, 1600)">
+  x-cloak
+  x-init="setTimeout(() => { subscribeVisible = true  }, 1000), setTimeout(() => { $refs.idea.focus() }, 1300)">
   <div class="mt-10 lg:mt-0 mx-auto max-w-sm">
     <p class="lg:-mt-5 tracking-wider font-display uppercase text-pink leading-5 lg:leading-6 text-sm lg:text-base">
       {{ label }}

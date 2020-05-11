@@ -53,6 +53,7 @@
       x-init="setTimeout(() => { logoVisible = true }, 1000), setTimeout(() => { codeVisible = true }, 300)">
         <div
         x-show="codeVisible"
+        x-cloak
         x-transition:enter="ease-out duration-1000"
         x-transition:enter-start="opacity-0"
         x-transition:enter-end="opacity-100"
