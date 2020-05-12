@@ -4,15 +4,6 @@ sections:
     display: Main
     fields:
       -
-        handle: idea
-        field:
-          input_type: text
-          type: text
-          localizable: false
-          listable: hidden
-          display: Idea
-          placeholder: 'Share your content modeling idea'
-      -
         handle: email
         field:
           input_type: email
@@ -21,3 +12,12 @@ sections:
           listable: hidden
           display: Email
           placeholder: 'Email address'
+      -
+        handle: idea
+        field:
+          input_type: text
+          type: text
+          localizable: false
+          listable: hidden
+          display: Idea
+          placeholder: '💡Share one content modeling idea'
