@@ -1,0 +1,107 @@
+title: 'Real Estate Property'
+fields:
+  -
+    handle: photos
+    field:
+      mode: grid
+      container: assets
+      restrict: false
+      allow_uploads: true
+      max_files: 4
+      type: assets
+      localizable: false
+      listable: hidden
+      display: Photos
+  -
+    handle: price
+    field:
+      placeholder: '0.00'
+      input_type: text
+      prepend: $
+      type: text
+      localizable: false
+      width: 33
+      listable: hidden
+      display: Price
+  -
+    handle: listing_date
+    field:
+      mode: single
+      time_enabled: false
+      time_required: false
+      earliest_date: '1900-01-01'
+      full_width: false
+      inline: false
+      columns: 1
+      rows: 1
+      type: date
+      localizable: false
+      width: 33
+      listable: hidden
+      display: 'Listing date'
+  -
+    handle: size
+    field:
+      input_type: text
+      append: 'sq. ft'
+      type: text
+      localizable: false
+      width: 33
+      listable: hidden
+      display: Size
+  -
+    handle: bathrooms
+    field:
+      type: integer
+      localizable: false
+      width: 33
+      listable: hidden
+      display: Bathrooms
+  -
+    handle: bedrooms
+    field:
+      type: integer
+      localizable: false
+      width: 33
+      listable: hidden
+      display: Bedrooms
+  -
+    handle: parking
+    field:
+      type: integer
+      localizable: false
+      width: 33
+      listable: hidden
+      display: Parking
+  -
+    handle: property_type
+    field:
+      options:
+        house: House
+        apartment: Apartment
+        townhouse: Townhouse
+      clearable: false
+      multiple: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      type: select
+      localizable: false
+      listable: hidden
+      display: 'Property type'
+  -
+    handle: address
+    field:
+      input_type: text
+      type: text
+      localizable: false
+      listable: hidden
+      display: Address
+  -
+    handle: description
+    field:
+      type: textarea
+      localizable: false
+      listable: hidden
+      display: Description

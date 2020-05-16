@@ -1,0 +1,128 @@
+title: Recipe
+fields:
+  -
+    handle: photo
+    field:
+      mode: grid
+      container: assets
+      restrict: false
+      allow_uploads: true
+      type: assets
+      localizable: false
+      listable: hidden
+      display: Photo
+      max_files: 1
+  -
+    handle: prep_time
+    field:
+      placeholder: '0:00'
+      input_type: text
+      append: min
+      type: text
+      localizable: false
+      width: 33
+      listable: hidden
+      display: 'Prep time'
+  -
+    handle: cook_time
+    field:
+      placeholder: '0:00'
+      input_type: text
+      append: min
+      type: text
+      localizable: false
+      width: 33
+      listable: hidden
+      display: 'Cook time'
+  -
+    handle: serving_size
+    field:
+      type: integer
+      localizable: false
+      width: 33
+      listable: hidden
+      display: 'Serving size'
+  -
+    handle: ingredients
+    field:
+      fields:
+        -
+          handle: quantity
+          field:
+            input_type: text
+            type: text
+            localizable: false
+            listable: hidden
+            display: Quantity
+            width: 33
+        -
+          handle: ingredient
+          field:
+            input_type: text
+            type: text
+            localizable: false
+            listable: hidden
+            display: Ingredient
+            width: 66
+      mode: table
+      add_row: 'Add Ingredient'
+      reorderable: true
+      type: grid
+      instructions: 'Add an ingredient...'
+      localizable: false
+      listable: hidden
+      display: Ingredients
+  -
+    handle: instructions
+    field:
+      fields:
+        -
+          handle: step
+          field:
+            type: textarea
+            localizable: false
+            width: 66
+            listable: hidden
+            display: Step
+        -
+          handle: ingredients
+          field:
+            type: list
+            localizable: false
+            listable: hidden
+            display: Ingredients
+            width: 33
+      mode: table
+      add_row: 'Add Step'
+      reorderable: true
+      type: grid
+      instructions: 'Add an instruction step'
+      localizable: false
+      listable: hidden
+      display: Instructions
+  -
+    handle: cookware
+    field:
+      type: list
+      instructions: 'Add a cookware item...'
+      localizable: false
+      listable: hidden
+      display: Cookware
+      width: 50
+  -
+    handle: nutrition
+    field:
+      mode: keyed
+      keys:
+        calories: Calories
+        fat: 'Total Fat'
+        carbs: 'Net Carbs'
+        protein: Protein
+        sugars: Sugars
+        fiber: Fiber
+      type: array
+      instructions: 'Amounts per 1 serving of meal'
+      localizable: false
+      listable: hidden
+      display: Nutrition
+      width: 50

@@ -1,0 +1,7 @@
+title: 'Real Estate Property'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        import: real_estate_property

@@ -1,0 +1,13 @@
+title: Examples
+template: default
+layout: layout
+blueprints:
+  - music_album
+  - product
+  - recipe
+  - real_estate_property
+revisions: false
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

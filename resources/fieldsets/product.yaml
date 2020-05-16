@@ -1,0 +1,120 @@
+title: Product
+fields:
+  -
+    handle: images
+    field:
+      mode: grid
+      container: assets
+      restrict: false
+      allow_uploads: true
+      max_files: 4
+      type: assets
+      localizable: false
+      listable: hidden
+      display: Images
+  -
+    handle: price
+    field:
+      placeholder: '0.00'
+      input_type: text
+      prepend: $
+      type: text
+      localizable: false
+      listable: hidden
+      display: Price
+      width: 50
+  -
+    handle: brand
+    field:
+      input_type: text
+      type: text
+      localizable: false
+      width: 50
+      listable: hidden
+      display: Brand
+  -
+    handle: headline
+    field:
+      input_type: text
+      type: text
+      localizable: false
+      listable: hidden
+      display: Headline
+  -
+    handle: short_description
+    field:
+      type: textarea
+      localizable: false
+      listable: hidden
+      display: 'Short description'
+  -
+    handle: benefits
+    field:
+      fields:
+        -
+          handle: benefit
+          field:
+            input_type: text
+            type: text
+            localizable: false
+            listable: hidden
+            display: Benefit
+        -
+          handle: details
+          field:
+            type: textarea
+            localizable: false
+            listable: hidden
+            display: Details
+      mode: table
+      reorderable: true
+      type: grid
+      localizable: false
+      listable: hidden
+      display: Benefits
+      add_row: 'Add Benefit'
+  -
+    handle: features
+    field:
+      sets:
+        feature_category:
+          display: 'Feature Category'
+          fields:
+            -
+              handle: category
+              field:
+                input_type: text
+                type: text
+                localizable: false
+                listable: hidden
+                display: Category
+            -
+              handle: features
+              field:
+                fields:
+                  -
+                    handle: feature
+                    field:
+                      input_type: text
+                      type: text
+                      localizable: false
+                      listable: hidden
+                      display: Feature
+                  -
+                    handle: details
+                    field:
+                      type: textarea
+                      localizable: false
+                      listable: hidden
+                      display: Details
+                mode: table
+                reorderable: true
+                type: grid
+                localizable: false
+                listable: hidden
+                display: Features
+                add_row: 'Add Feature'
+      type: replicator
+      localizable: false
+      listable: hidden
+      display: Features
