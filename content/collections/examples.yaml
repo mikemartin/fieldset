@@ -6,6 +6,8 @@ blueprints:
   - product
   - recipe
   - real_estate_property
+  - song
+  - feature
 revisions: false
 sort_dir: asc
 date_behavior:

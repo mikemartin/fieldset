@@ -40,31 +40,10 @@ fields:
   -
     handle: songs
     field:
-      fields:
-        -
-          handle: title
-          field:
-            input_type: text
-            type: text
-            localizable: false
-            listable: hidden
-            display: Title
-            width: 66
-        -
-          handle: duration
-          field:
-            placeholder: '0:00'
-            input_type: text
-            append: min
-            type: text
-            localizable: false
-            listable: hidden
-            display: Duration
-            width: 33
-      mode: table
-      add_row: 'Add Song'
-      reorderable: true
-      type: grid
+      mode: default
+      collections:
+        - examples
+      type: entries
       localizable: false
       listable: hidden
       display: Songs

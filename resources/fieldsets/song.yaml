@@ -1,0 +1,118 @@
+title: Song
+fields:
+  -
+    handle: artist
+    field:
+      input_type: text
+      type: text
+      localizable: false
+      width: 50
+      listable: hidden
+      display: Artist
+  -
+    handle: duration
+    field:
+      placeholder: '0:00'
+      input_type: text
+      append: min
+      type: text
+      localizable: false
+      listable: hidden
+      width: 50
+      display: Duration
+  -
+    handle: video
+    field:
+      type: video
+      localizable: false
+      listable: hidden
+      display: Video
+  -
+    handle: music_links
+    field:
+      fields:
+        -
+          handle: service
+          field:
+            options:
+              spotify: Spotify
+              apple_music: 'Apple Music'
+              google_play_music: 'Google Play Music'
+              amazon_music: 'Amazon Music'
+              youtube_music: 'YouTube Music'
+              tidal: Tidal
+              deezer: Deezer
+            clearable: false
+            multiple: false
+            searchable: true
+            taggable: true
+            push_tags: false
+            cast_booleans: false
+            type: select
+            localizable: false
+            listable: hidden
+            display: Service
+        -
+          handle: link
+          field:
+            input_type: text
+            type: text
+            localizable: false
+            listable: hidden
+            display: Link
+            placeholder: 'https://open.spotify.com/track/1vlcWaJV9hGbiQMbsh2d8t'
+            prepend: URL
+      mode: table
+      reorderable: true
+      type: grid
+      localizable: false
+      listable: hidden
+      display: 'Music links'
+      add_row: 'Add Link'
+  -
+    handle: lyrics
+    field:
+      buttons:
+        - bold
+        - italic
+      save_html: true
+      toolbar_mode: floating
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      type: bard
+      localizable: false
+      listable: hidden
+      display: Lyrics
+  -
+    handle: credits
+    field:
+      fields:
+        -
+          handle: role
+          field:
+            input_type: text
+            type: text
+            localizable: false
+            width: 50
+            listable: hidden
+            display: Role
+        -
+          handle: name
+          field:
+            input_type: text
+            type: text
+            localizable: false
+            width: 50
+            listable: hidden
+            display: Name
+      mode: table
+      add_row: 'Add Credit'
+      reorderable: true
+      type: grid
+      localizable: false
+      listable: hidden
+      display: Credits

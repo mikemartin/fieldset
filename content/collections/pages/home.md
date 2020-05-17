@@ -132,5 +132,6 @@ button: 'Get notified'
 custom_meta_title: 'Field:Set // Blueprints, fieldsets & forms for Statamic.'
 notification_title: 'Thanks for your idea'
 notification_message: 'We will email you when we launch'
+blueprint: home
 id: home
 ---

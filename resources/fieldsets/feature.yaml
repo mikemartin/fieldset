@@ -1,37 +1,17 @@
-title: Product
+title: Feature
 fields:
   -
-    handle: images
+    handle: image
     field:
       mode: grid
       container: assets
       restrict: false
       allow_uploads: true
-      max_files: 4
+      max_files: 1
       type: assets
       localizable: false
       listable: hidden
-      display: Images
-  -
-    handle: price
-    field:
-      placeholder: '0.00'
-      input_type: text
-      prepend: $
-      type: text
-      localizable: false
-      listable: hidden
-      display: Price
-      width: 50
-  -
-    handle: brand
-    field:
-      input_type: text
-      type: text
-      localizable: false
-      width: 50
-      listable: hidden
-      display: Brand
+      display: Image
   -
     handle: headline
     field:
@@ -41,14 +21,14 @@ fields:
       listable: hidden
       display: Headline
   -
-    handle: short_description
+    handle: summary
     field:
       type: textarea
       localizable: false
       listable: hidden
-      display: 'Short description'
+      display: Summary
   -
-    handle: features
+    handle: subfeatures
     field:
       mode: default
       collections:
@@ -56,4 +36,4 @@ fields:
       type: entries
       localizable: false
       listable: hidden
-      display: Features
+      display: Subfeatures
