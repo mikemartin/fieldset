@@ -4,9 +4,9 @@ cover_art: examples/R-354906-1412775755-4012.jpeg.jpg
 artist: 'David Bowie'
 release_date: '1973-04-19 07:15'
 updated_by: ac214142-16d4-46fb-8870-576ca392afb2
-updated_at: 1589687889
+updated_at: 1589717003
 blueprint: music_album
-artwork: examples/R-354906-1412775755-4012.jpeg.jpg
+artwork: examples/bowie.svg
 credits:
   -
     name: 'David Bowie'

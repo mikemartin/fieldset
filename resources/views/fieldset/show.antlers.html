@@ -1,0 +1,20 @@
+<main class="relative flex items-center justify-center max-w-screen-xl mx-auto h-screen px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+  <div class="mx-auto max-w-3xl">
+    <p class="lg:-mt-5 tracking-wider font-display uppercase text-pink leading-5 lg:leading-6 text-sm lg:text-base">
+      {{ label }}
+    </p>
+    <h2 class="mt-2 lg:mt-3 max-w-3xl text-xl lg:text-2xl leading-6 lg:leading-8 text-white font-display">
+      {{ description }}
+    </h2>
+    <div class="mt-5 lg:mt-6">
+      {{ form:create in="music_album" id="music_album" }}
+        {{ fields }}
+          <input {{ if handle == "email" }}type="email"{{ elseif handle=="idea" }}type="text" x-show="email"{{else}}type="text"{{/if}} placeholder="{{ placeholder }}" aria-label="{{ display }}" name="{{ handle }}" x-ref="{{ handle }}" x-model="{{ handle }}" value="{{ old }}" autocomplete="off" class="rounded-none {{ if first }}rounded-t-md -mb-px{{/if}} appearance-none font-display tracking-wide w-full px-5 py-3 border border-pink bg-transparent text-sm lg:text-base leading-5 lg:leading-6 text-pink placeholder-pink focus:outline-none focus:placeholder-white focus:text-white transition duration-150 ease-in-out" />
+        {{ /fields }}
+        <button disabled class="text-black w-full flex items-center justify-center px-5 py-3 border border-transparent text-sm lg:text-base leading-5 lg:leading-6 font-display rounded-b-md uppercase tracking-wider bg-pink hover:bg-opacity-75 focus:outline-none focus:bg-opacity-75 transition duration-150 ease-in-out">
+          {{ button }}
+        </button>
+      {{ /form:create }}
+    </div>
+  </div>
+</main>
