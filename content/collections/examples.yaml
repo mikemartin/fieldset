@@ -8,6 +8,7 @@ blueprints:
   - real_estate_property
   - song
   - feature
+  - review
 revisions: false
 sort_dir: asc
 date_behavior:

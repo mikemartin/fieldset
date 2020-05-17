@@ -1,2 +1,53 @@
 title: Review
-fields: {  }
+fields:
+  -
+    handle: rating
+    field:
+      options:
+        - '0'
+        - '1'
+        - '2'
+        - '3'
+        - '4'
+        - '5'
+      type: button_group
+      localizable: false
+      listable: hidden
+      display: Rating
+      width: 50
+  -
+    handle: reviewer
+    field:
+      input_type: text
+      type: text
+      localizable: false
+      width: 50
+      listable: hidden
+      display: Reviewer
+  -
+    handle: review
+    field:
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - image
+        - table
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      type: bard
+      localizable: false
+      listable: hidden
+      display: Review
