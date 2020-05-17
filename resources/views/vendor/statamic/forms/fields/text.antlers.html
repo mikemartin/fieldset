@@ -1,1 +1,5 @@
-<input {{ if input_type == 'email' }}aria-label="Email address"{{ /if }} placeholder="{{ display }}" type="{{ input_type ?? 'text' }}" name="{{ handle }}" value="{{ old }}" class="appearance-none w-full px-5 py-3 border border-transparent text-base leading-6 rounded-md text-gray-900 bg-white placeholder-black focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out sm:max-w-xs" />
+{{ if handle == "title" }}
+<input placeholder="{{ placeholder }}" type="{{ input_type ?? 'text' }}" name="{{ handle }}" value="" class="rounded-none rounded-md appearance-none font-display tracking-wide w-full px-5 py-3 border border-pink bg-transparent text-sm lg:text-base leading-5 lg:leading-6 text-pink placeholder-pink focus:outline-none focus:placeholder-white focus:text-white transition duration-150 ease-in-out" />
+{{ else }}
+<input placeholder="{{ placeholder }}" type="{{ input_type ?? 'text' }}" name="{{ handle }}" value="{{ old }}" class="rounded-none rounded-md appearance-none font-display tracking-wide w-full px-5 py-3 border border-pink bg-transparent text-sm lg:text-base leading-5 lg:leading-6 text-pink placeholder-pink focus:outline-none focus:placeholder-white focus:text-white transition duration-150 ease-in-out" />
+{{ /if }}

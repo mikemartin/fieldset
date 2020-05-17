@@ -1,5 +1,5 @@
 title: Examples
-template: default
+template: fieldset/show
 layout: layout
 blueprints:
   - music_album

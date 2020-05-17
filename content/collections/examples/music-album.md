@@ -1,6 +1,5 @@
 ---
 title: 'Music Album'
-cover_art: examples/R-354906-1412775755-4012.jpeg.jpg
 artist: 'David Bowie'
 release_date: '1973-04-19 07:15'
 updated_by: ac214142-16d4-46fb-8870-576ca392afb2
