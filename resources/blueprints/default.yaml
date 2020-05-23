@@ -1,0 +1,26 @@
+title: Fieldset
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: subtitle
+        field:
+          input_type: text
+          type: text
+          localizable: false
+          listable: hidden
+          display: Subtitle
+      -
+        handle: description
+        field:
+          input_type: text
+          type: text
+          localizable: false
+          listable: hidden
+          display: Description
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo_meta
