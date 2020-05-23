@@ -3,7 +3,7 @@ title: 'Field:Set'
 template: home
 fieldset: seo
 updated_by: ac214142-16d4-46fb-8870-576ca392afb2
-updated_at: 1589109119
+updated_at: 1589239918
 code: |
   title: Coming soon
   sections:
@@ -86,7 +86,6 @@ code: |
               custom: Custom
             default: description
             type: select
-            listable: hidden
             display: 'Meta Description'
         -
           handle: custom_meta_description
@@ -105,7 +104,6 @@ code: |
               custom: Custom
             default: site
             type: select
-            listable: hidden
             display: 'Social image'
         -
           handle: custom_social_image
@@ -116,7 +114,6 @@ code: |
             allow_uploads: true
             max_files: 1
             type: assets
-            listable: hidden
             display: 'Custom Social Image'
             if:
               social_image: 'equals custom'
