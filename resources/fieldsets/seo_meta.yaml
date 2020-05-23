@@ -1,0 +1,90 @@
+display: SEO
+fields:
+  -
+    handle: meta_title
+    field:
+      options:
+        title: Title
+        custom: Custom
+      multiple: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      default: title
+      type: select
+      instructions: 'Every URL in your site should have a unique Meta Title, ideally less than 60 characters long.'
+      localizable: false
+      listable: hidden
+      display: 'Meta Title'
+  -
+    handle: custom_meta_title
+    field:
+      input_type: text
+      character_limit: 60
+      type: text
+      localizable: false
+      listable: hidden
+      display: 'Custom Meta Title'
+      if:
+        meta_title: 'equals custom'
+  -
+    handle: meta_description
+    field:
+      options:
+        description: Description
+        custom: Custom
+      multiple: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      default: description
+      type: select
+      instructions: 'Every URL in your site should have a unique Meta Description, ideally less than 160 characters long.'
+      localizable: false
+      listable: hidden
+      display: 'Meta Description'
+  -
+    handle: custom_meta_description
+    field:
+      input_type: text
+      character_limit: 160
+      type: text
+      localizable: false
+      listable: hidden
+      display: 'Custom Meta Description'
+      if:
+        meta_description: 'equals custom'
+  -
+    handle: social_image
+    field:
+      options:
+        image: Image
+        custom: Custom
+      multiple: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      default: site
+      type: select
+      instructions: 'This image is used as a social network preview image.'
+      localizable: false
+      listable: hidden
+      display: 'Social image'
+  -
+    handle: custom_social_image
+    field:
+      container: assets
+      mode: grid
+      folder: seo
+      restrict: false
+      allow_uploads: true
+      max_files: 1
+      type: assets
+      localizable: false
+      listable: hidden
+      display: 'Custom Social Image'
+      if:
+        social_image: 'equals custom'
