@@ -1,0 +1,18 @@
+<div class="sm:col-span-2">
+  <label for="{{ handle }}" class="block text-base uppercase tracking-wide leading-8 text-pink">{{ display }}</label>
+  {{ value }}
+  <div class="flex">
+    <span class="inline-flex items-center py-3 rounded-l-md border border-r-0 border-pink text-pink">
+      {{ svg:drag-dots class="h-5 w-5 text-pink fill-current stroke-current" }}
+    </span>
+    <div class="form-input flex items-center justify-between flex-1 pl-3 rounded-l-none lg:text-base transition duration-150 ease-in-out">
+      <span class="inline-flex items-center">
+        {{ svg:dot class="mr-1.5 h-2 w-2 text-pink" }}
+        {{ title }}
+      </span>
+      <span class="text-xs uppercase tracking-wide text-pink">{{ display }}</span>
+    </div>
+
+  </div>
+  {{ /value }}
+</div>
