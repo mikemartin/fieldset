@@ -1,0 +1,36 @@
+<main class="relative flex items-center justify-center max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+  <div class="w-full gap-8 grid grid-cols-1 lg:grid-cols-3">
+    <header>
+      <p class="lg:-mt-5 tracking-wider uppercase text-pink leading-5 lg:leading-6 text-sm lg:text-base">
+        {{ title }}
+      </p>
+      <h2 class="mt-2 lg:mt-3 max-w-3xl text-xl lg:text-2xl leading-6 lg:leading-8 text-white font-display">
+        {{ subtitle }}
+      </h2>
+    </header>
+    <aside class="lg:col-span-2">
+      <div class="mx-auto max-w-3xl grid grid-cols-1 row-gap-6 sm:grid-cols-2 sm:col-gap-8">
+        {{ collection:fieldsets }}
+        <a href="{{ url }}" class="group block max-w-sm w-full bg-black border border-pink rounded-md hover:bg-pink hover:text-black transition duration-150 ease-in-out">
+          <div class="p-4">
+            <div class="flex items-start">
+              <div class="pt-0.5 flex-1">
+                <p class="w-full lg:flex group-hover:text-black lg:justify-between lg:items-center tracking-wider uppercase text-white leading-5 lg:leading-6 text-sm lg:text-base">
+                  {{ title }}
+
+                  <span class="inline-flex items-baseline px-2 py-0.5 rounded-full text-sm leading-5 bg-pink text-black group-hover:bg-black group-hover:text-white md:mt-2 lg:mt-0">
+                    {{ fieldset:count :from="example" }}
+                  </span>
+                </p>
+                <p class="mt-2 text-pink group-hover:text-black text-sm lg:text-base leading-5 lg:leading-6 lg:text-base">
+                  {{ subtitle }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        {{ /collection:fieldsets }}
+      </div>
+    </aside>
+  </div>
+</main>

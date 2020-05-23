@@ -9,6 +9,7 @@ blueprints:
   - song
   - feature
   - review
+  - seo_meta
 revisions: false
 sort_dir: asc
 date_behavior:

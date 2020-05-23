@@ -1,0 +1,11 @@
+---
+title: SEO
+subtitle: 'Manage meta title, meta description and social image.'
+example: cede37d2-8d1a-49e2-8060-aa6f1a444a4a
+meta_title: title
+meta_description: description
+social_image: site
+updated_by: ac214142-16d4-46fb-8870-576ca392afb2
+updated_at: 1590233944
+id: f926560a-8dcd-4147-bd4f-aed6eec504b9
+---
