@@ -20,16 +20,6 @@ sections:
           listable: hidden
           display: Description
       -
-        handle: form
-        field:
-          mode: default
-          type: form
-          localizable: false
-          listable: hidden
-          display: Form
-          max_items: 1
-          width: 50
-      -
         handle: example
         field:
           max_items: 1
