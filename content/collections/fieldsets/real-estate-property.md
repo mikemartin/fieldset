@@ -6,6 +6,8 @@ meta_title: title
 meta_description: description
 social_image: site
 updated_by: ac214142-16d4-46fb-8870-576ca392afb2
-updated_at: 1590229615
+updated_at: 1590302370
+author: ac214142-16d4-46fb-8870-576ca392afb2
+icon: icons/house-chimney.svg
 id: f5c7244e-05ae-4a81-aeea-5defec18dd3e
 ---
