@@ -1,34 +1,52 @@
 <main class="relative flex items-center justify-center max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-  <div class="w-full gap-8 grid grid-cols-1 lg:grid-cols-3">
+  <div class="w-full">
     <header>
       <p class="lg:-mt-5 tracking-wider uppercase text-pink leading-5 lg:leading-6 text-sm lg:text-base">
         {{ title }}
       </p>
-      <h2 class="mt-2 lg:mt-3 max-w-3xl text-xl lg:text-2xl leading-6 lg:leading-8 text-white font-display">
+      <h2 class="mt-2 lg:mt-3 max-w-3xl font-bold text-xl lg:text-2xl leading-6 lg:leading-8 text-white font-display">
         {{ subtitle }}
       </h2>
     </header>
-    <aside class="lg:col-span-2">
-      <div class="mx-auto max-w-3xl grid grid-cols-1 row-gap-6 sm:grid-cols-2 sm:col-gap-8">
+    <aside class="mt-10">
+      <div class="grid grid-cols-1 row-gap-8 sm:grid-cols-2 lg:grid-cols-3 sm:col-gap-10">
         {{ collection:fieldsets }}
-        <a href="{{ url }}" class="group block max-w-sm w-full bg-black border border-pink rounded-md hover:bg-pink hover:text-black transition duration-150 ease-in-out">
-          <div class="p-4">
-            <div class="flex items-start">
-              <div class="pt-0.5 flex-1">
-                <p class="w-full lg:flex group-hover:text-black lg:justify-between lg:items-center tracking-wider uppercase text-white leading-5 lg:leading-6 text-sm lg:text-base">
+        <div class="group flex flex-col bg-gray-900 hover:bg-opacity-75 hover:bg-pink text-white text-opacity-75 rounded-md group block w-full transition duration-150 ease-in-out transform hover:-translate-y-1">
+            <a href="{{ url }}" class="p-6 flex-1 flex items-start space-x-5">
+              <div class="w-12">
+                {{ svg :src="icon" class="text-pink group-hover:text-white w-full" }}
+              </div>
+              <div class="flex-1">
+                <p class="w-full lg:flex lg:justify-between font-bold lg:items-center text-white leading-6 lg:leading-7 text-base lg:text-lg">
                   {{ title }}
-
-                  <span class="inline-flex items-baseline px-2 py-0.5 rounded-full text-sm leading-5 bg-pink text-black group-hover:bg-black group-hover:text-white md:mt-2 lg:mt-0">
-                    {{ fieldset:count :from="example" }}
-                  </span>
                 </p>
-                <p class="mt-2 text-pink group-hover:text-black text-sm lg:text-base leading-5 lg:leading-6 lg:text-base">
+                <p class="mt-1 text-sm leading-5">
                   {{ subtitle }}
                 </p>
               </div>
+            </a>
+            {{ author }}
+            <div class="px-6 py-4 flex justify-between items-center border-t border-black border-opacity-25">
+              <div class="flex items-center">
+                <div class="flex-shrink-0">
+                  <img class="h-6 w-6 rounded-full" src="{{ email|gravatar:256 }}" alt="{{ name }}" />
+                </div>
+                <div class="ml-2">
+                  <p class="text-sm leading-5">
+                    {{ name }}
+                  </p>
+                </div>
+              </div>
+              <div class="ml-2 flex items-baseline text-sm leading-5">
+                <a href="#" class="self-center flex-shrink-0 inline-block text-white text-opacity-25 hover:text-opacity-100">
+                  {{ svg:heart class="h-5 w-5 text-current" }}
+                </a>
+                <span class="sr-only">Likes</span>
+                <span class="ml-1">5</span>
+              </div>
             </div>
-          </div>
-        </a>
+            {{ /author }}
+        </div>
         {{ /collection:fieldsets }}
       </div>
     </aside>

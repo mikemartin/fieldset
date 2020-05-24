@@ -4,10 +4,33 @@ sections:
     display: Main
     fields:
       -
+        handle: icon
+        field:
+          mode: list
+          container: assets
+          folder: icons
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          type: assets
+          localizable: false
+          listable: hidden
+          display: Icon
+          width: 50
+      -
+        handle: author
+        field:
+          max_items: 1
+          mode: default
+          type: users
+          localizable: false
+          listable: hidden
+          display: Author
+          width: 50
+      -
         handle: subtitle
         field:
-          input_type: text
-          type: text
+          type: textarea
           localizable: false
           listable: hidden
           display: Subtitle
