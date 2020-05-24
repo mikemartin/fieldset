@@ -17,6 +17,9 @@ mix.postCss('resources/css/tailwind.css', 'public/css', [
     require('postcss-import'),
     require('tailwindcss'),
     require('postcss-nested'),
+    require('postcss-easing-gradients'),
+    require('postcss-scrim-gradient'),
+    require('postcss-color-function'),
     require('postcss-preset-env')({stage: 0})
 ]).browserSync({
   proxy: "http://fieldset.test",

@@ -1,3 +1,4 @@
+const colors = require('@tailwindcss/ui/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
@@ -6,10 +7,10 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      white: "#FFFFFF",
+      white: colors['cool-gray']['100'],
       pink: "#FF269E",
-      black: "#010101",
-      gray: "#EFFEFF",
+      black: '#13141c',
+      gray: colors["cool-gray"],
       blue: "#46D9FF",
     },
     extend: {
