@@ -1,6 +1,6 @@
 ---
 title: 'Music Album'
-subtitle: 'Create an album with artwork, songs and credits.'
+subtitle: 'Build a discography with artwork, songs and credits.'
 meta_title: title
 meta_description: description
 social_image: site
