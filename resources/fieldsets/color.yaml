@@ -1,0 +1,38 @@
+title: Color
+fields:
+  -
+    handle: color
+    field:
+      type: color_swatches
+      display: Color
+      colors:
+        -
+          label: hot
+          value:
+            - '#FF269E'
+            - '#FF6BF0'
+        -
+          label: ultraviolet
+          value:
+            - '#CE30FF'
+            - '#FB7EFF'
+        -
+          label: lightning
+          value:
+            - '#1DCFED'
+            - '#66FAFE'
+        -
+          label: glowworm
+          value:
+            - '#28F07E'
+            - '#8BFFDB'
+        -
+          label: firefly
+          value:
+            - '#FDF50C'
+            - '#FFFE7E'
+        -
+          label: flame
+          value:
+            - '#FB024C'
+            - '#FF3D76'

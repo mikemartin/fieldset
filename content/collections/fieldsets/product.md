@@ -6,8 +6,13 @@ meta_title: title
 meta_description: description
 social_image: site
 updated_by: ac214142-16d4-46fb-8870-576ca392afb2
-updated_at: 1590301632
+updated_at: 1590832787
 author: ac214142-16d4-46fb-8870-576ca392afb2
 icon: icons/products-purse-1.svg
+color:
+  label: ultraviolet
+  value:
+    - '#CE30FF'
+    - '#FB7EFF'
 id: 1210fe5b-4884-4e6c-8bc8-349077a2fb71
 ---

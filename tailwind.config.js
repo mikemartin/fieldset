@@ -7,11 +7,33 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      white: colors['cool-gray']['100'],
-      pink: "#FF269E",
-      black: '#13141c',
-      gray: colors["cool-gray"],
-      blue: "#46D9FF",
+      white: '#FCEDFA',
+      black: '#15032a',
+      gray: '#1d063a',
+      hot: {
+        default: '#FF269E',
+        light: '#FF5ADC'
+      },
+      ultraviolet: {
+        default: '#CE30FF',
+        light: '#FB7EFF',
+      },
+      lightning: {
+        default: '#1DCFED',
+        light: '#66FAFE'
+      },
+      glowworm: {
+        default: '#28F07E',
+        light: '#6DFABE'
+      },
+      firefly: {
+        default: '#FDF50C',
+        light: '#FFFE7E'
+      },
+      flame: {
+        default: '#FB024C',
+        light: '#FF3D76'
+      },
     },
     extend: {
       fontFamily: {
@@ -21,11 +43,11 @@ module.exports = {
     customForms: theme => ({
       default: {
         'input, textarea, multiselect, select, checkbox, radio': {
-          borderColor: theme('colors.pink'),
+          borderColor: theme('colors.hot.default'),
           backgroundColor: theme('colors.transparent')
         },
         'select, checkbox, radio': {
-          iconColor: theme('colors.pink'),
+          iconColor: theme('colors.hot.default'),
         },
         'input, textarea, multiselect, select': {
           fontSize: theme('fontSize.sm'),
@@ -34,11 +56,11 @@ module.exports = {
           letterSpacing: theme('letterSpacing.wide'),
           color: theme('colors.white'),
           '&::placeholder': {
-            color: theme('colors.pink'),
+            color: theme('colors.hot.default'),
           },
           '&:focus': {
             boxShadow: defaultTheme.boxShadow.none,
-            borderColor: theme('colors.pink'),
+            borderColor: theme('colors.hot.default'),
             '&::placeholder': {
               color: theme('colors.white')
             },

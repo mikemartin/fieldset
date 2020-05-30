@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e6e1b61361eb4eebfaa6bdb9280b6b9",
+    "content-hash": "87c03db00c3b5f8e2dfe698eab48f34e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3169,6 +3169,47 @@
                 "uuid"
             ],
             "time": "2020-03-29T20:13:32+00:00"
+        },
+        {
+            "name": "rias/statamic-color-swatches",
+            "version": "v2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/riasvdv/statamic-color-swatches.git",
+                "reference": "50ecf733e26c2223f90a3cd7a1d39d3d3b047ec9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/riasvdv/statamic-color-swatches/zipball/50ecf733e26c2223f90a3cd7a1d39d3d3b047ec9",
+                "reference": "50ecf733e26c2223f90a3cd7a1d39d3d3b047ec9",
+                "shasum": ""
+            },
+            "require": {
+                "pixelfear/composer-dist-plugin": "^0.1.0"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "download-dist": {
+                    "url": "https://github.com/riasvdv/statamic-color-swatches/releases/download/{$version}/dist.tar.gz",
+                    "path": "dist"
+                },
+                "statamic": {
+                    "name": "Color Swatches",
+                    "description": "Color Swatches addon"
+                },
+                "laravel": {
+                    "providers": [
+                        "Rias\\ColorSwatches\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rias\\ColorSwatches\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2020-01-01T11:52:13+00:00"
         },
         {
             "name": "scrumpy/html-to-prosemirror",

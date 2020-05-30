@@ -7,7 +7,7 @@
   x-cloak
   x-init="setTimeout(() => { subscribeVisible = true  }, 1000), setTimeout(() => { $refs.email.focus() }, 1300)">
   <div class="mt-10 lg:mt-0 mx-auto max-w-sm">
-    <p class="lg:-mt-5 tracking-wider uppercase text-pink leading-5 lg:leading-6 text-sm lg:text-base">
+    <p class="lg:-mt-5 tracking-wider uppercase text-hot leading-5 lg:leading-6 text-sm lg:text-base">
       {{ label }}
     </p>
     <h2 class="mt-2 lg:mt-3 max-w-3xl font-bold text-xl lg:text-2xl leading-6 lg:leading-8 text-white font-display">
@@ -16,9 +16,9 @@
     <div class="mt-5 lg:mt-6">
       {{ form:create in="subscribe" id="subscribe" x-ref="form" }}
         {{ fields }}
-          <input {{ if handle == "email" }}type="email"{{ elseif handle=="idea" }}type="text" x-show="email"{{else}}type="text"{{/if}} placeholder="{{ placeholder }}" aria-label="{{ display }}" name="{{ handle }}" x-ref="{{ handle }}" x-model="{{ handle }}" value="{{ old }}" autocomplete="off" class="rounded-none {{ if first }}rounded-t-md -mb-px{{/if}} appearance-none tracking-wide w-full px-5 py-3 border border-pink bg-transparent text-sm lg:text-base leading-5 lg:leading-6 text-pink placeholder-pink focus:outline-none focus:placeholder-white focus:text-white transition duration-150 ease-in-out" />
+          <input {{ if handle == "email" }}type="email"{{ elseif handle=="idea" }}type="text" x-show="email"{{else}}type="text"{{/if}} placeholder="{{ placeholder }}" aria-label="{{ display }}" name="{{ handle }}" x-ref="{{ handle }}" x-model="{{ handle }}" value="{{ old }}" autocomplete="off" class="rounded-none {{ if first }}rounded-t-md -mb-px{{/if}} appearance-none tracking-wide w-full px-5 py-3 border border-hot bg-transparent text-sm lg:text-base leading-5 lg:leading-6 text-hot placeholder-hot focus:outline-none focus:placeholder-white focus:text-white transition duration-150 ease-in-out" />
         {{ /fields }}
-        <button @click.prevent="submitForm($refs)" :disabled="!email" :class="{ 'text-black': !email, 'text-white': email }" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-sm lg:text-base leading-5 lg:leading-6 rounded-b-md uppercase tracking-wider bg-pink hover:bg-opacity-75 focus:outline-none focus:bg-opacity-75 transition duration-150 ease-in-out">
+        <button @click.prevent="submitForm($refs)" :disabled="!email" :class="{ 'text-black': !email, 'text-white': email }" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-sm lg:text-base leading-5 lg:leading-6 rounded-b-md uppercase tracking-wider bg-hot hover:bg-opacity-75 focus:outline-none focus:bg-opacity-75 transition duration-150 ease-in-out">
           {{ button }}
         </button>
       {{ /form:create }}

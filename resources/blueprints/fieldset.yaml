@@ -28,6 +28,8 @@ sections:
           display: Author
           width: 50
       -
+        import: color
+      -
         handle: subtitle
         field:
           type: textarea
