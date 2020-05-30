@@ -1,16 +1,16 @@
 <div class="{{ partial:fields/width }}">
-  <label for="{{ handle }}" class="block text-base uppercase tracking-wide leading-8 text-hot">{{ display }}</label>
+  <label for="{{ handle }}" class="block text-base uppercase tracking-wide leading-8 text-{{ color.label }}">{{ display }}</label>
   {{ value }}
   <div class="flex">
-    <span class="inline-flex items-center py-3 rounded-l-md border border-r-0 border-hot text-hot">
-      {{ svg:drag-dots class="h-5 w-5 text-hot fill-current stroke-current" }}
+    <span class="inline-flex items-center py-3 rounded-l-md text-{{ color.label }} border-r-2 border-black bg-gray">
+      {{ svg:drag-dots class="h-5 w-5 text-{{ color.label }} fill-current stroke-current" }}
     </span>
-    <div class="form-input flex items-center justify-between flex-1 pl-3 rounded-l-none lg:text-base transition duration-150 ease-in-out">
+    <div class="form-input form-input-{{ color.label }} flex items-center justify-between flex-1 pl-3 rounded-l-none lg:text-base transition duration-150 ease-in-out">
       <span class="inline-flex items-center">
-        {{ svg:dot class="mr-1.5 h-2 w-2 text-hot" }}
+        {{ svg:dot class="mr-1.5 h-2 w-2 text-{{ color.label }}" }}
         {{ title }}
       </span>
-      <span class="text-xs uppercase tracking-wide text-hot">{{ display }}</span>
+      <span class="text-xs uppercase tracking-wide text-{{ color.label }}">{{ display }}</span>
     </div>
 
   </div>

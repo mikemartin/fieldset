@@ -7,7 +7,7 @@ fields:
       display: Color
       colors:
         -
-          label: hot
+          label: pop
           value:
             - '#FF269E'
             - '#FF6BF0'

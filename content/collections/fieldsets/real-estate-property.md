@@ -10,7 +10,7 @@ updated_at: 1590832812
 author: ac214142-16d4-46fb-8870-576ca392afb2
 icon: icons/house-chimney.svg
 color:
-  label: hot
+  label: pop
   value:
     - '#FF269E'
     - '#FF6BF0'

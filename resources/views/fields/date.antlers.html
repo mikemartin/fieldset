@@ -1,9 +1,9 @@
 <div class="{{ partial:fields/width }}">
-  <label for="{{ handle }}" class="block text-base uppercase tracking-wide leading-8 text-hot">{{ display }}</label>
+  <label for="{{ handle }}" class="block text-base uppercase tracking-wide leading-8 text-{{ color.label }}">{{ display }}</label>
   <div class="relative">
     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-      {{ svg:calendar class="w-5 h-5 text-hot" }}
+      {{ svg:calendar class="w-5 h-5 text-{{ color.label }}" }}
     </div>
-    <input id="{{ handle }}" readonly class="form-input w-full lg:text-base transition duration-150 ease-in-out pl-10" value="{{ value format='m/d/Y' }}" placeholder="{{ placeholder }}" />
+    <input id="{{ handle }}" readonly class="form-input form-input-{{ color.label }} w-full lg:text-base transition duration-150 ease-in-out pl-10" value="{{ value format='m/d/Y' }}" placeholder="{{ placeholder }}" />
   </div>
 </div>

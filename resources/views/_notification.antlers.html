@@ -7,12 +7,12 @@
   x-transition:leave-start="opacity-100"
   x-transition:leave-end="opacity-0"
   x-cloak
-  class="max-w-sm w-full bg-black border border-hot rounded-md pointer-events-auto">
+  class="max-w-sm w-full bg-black border border-pop rounded-md pointer-events-auto">
     <div class="rounded-md overflow-hidden">
       <div class="p-4">
         <div class="flex items-start">
           <div class="pt-0.5 flex-1">
-            <p class="tracking-wider uppercase text-hot leading-5 lg:leading-6 text-sm lg:text-base">
+            <p class="tracking-wider uppercase text-pop leading-5 lg:leading-6 text-sm lg:text-base">
               {{ notification_title }}
             </p>
             <p class="mt-2 text-white text-sm lg:text-base leading-5 lg:leading-6 lg:text-base">
@@ -20,7 +20,7 @@
             </p>
           </div>
           <div class="ml-4 flex-shrink-0 flex">
-            <button @click="success = false;" class="inline-flex text-hot focus:outline-none hover:text-white focus:text-white transition ease-in-out duration-150">
+            <button @click="success = false;" class="inline-flex text-pop focus:outline-none hover:text-white focus:text-white transition ease-in-out duration-150">
               <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
               </svg>
