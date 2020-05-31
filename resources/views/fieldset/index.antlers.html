@@ -11,7 +11,7 @@
     <aside class="mt-10">
       <div class="grid grid-cols-1 row-gap-8 sm:grid-cols-2 lg:grid-cols-3 sm:col-gap-10">
         {{ collection:fieldsets }}
-        <div class="group flex overflow-hidden flex-col bg-gray hover:bg-{{ color.label }}-light text-white hover:text-black text-opacity-75 rounded-md group block w-full transition duration-150 ease-in-out transform hover:-translate-y-1">
+        <div class="group flex overflow-hidden flex-col bg-gray hover:bg-{{ color.label }}-light hover:bg-opacity-75 text-white hover:text-black text-opacity-75 rounded-md group block w-full transition duration-150 ease-in-out transform hover:-translate-y-1">
             <a href="{{ url }}" class="p-6 flex-1 flex items-start space-x-5">
               <div class="w-12">
                 {{ svg :src="icon" class="text-{color.label} group-hover:text-black w-full" }}
@@ -26,7 +26,7 @@
               </div>
             </a>
             {{ author }}
-            <div class="px-6 py-4 flex justify-between items-center border-t border-black border-opacity-25">
+            <div class="px-6 py-4 flex justify-between items-center border-t border-black border-opacity-50">
               <div class="flex items-center">
                 <div class="flex-shrink-0">
                   <img class="h-6 w-6 rounded-full" src="{{ email|gravatar:256 }}" alt="{{ name }}" />
@@ -38,7 +38,7 @@
                 </div>
               </div>
               <div class="ml-2 flex items-baseline text-sm leading-5">
-                <a href="#" class="self-center flex-shrink-0 inline-block text-white group-hover:text-black text-opacity-25 hover:text-opacity-100">
+                <a href="#" class="self-center flex-shrink-0 inline-block text-black text-opacity-75 hover:text-opacity-100 hover:text-white">
                   {{ svg:heart class="h-5 w-5 text-current" }}
                 </a>
                 <span class="sr-only">Likes</span>

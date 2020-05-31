@@ -8,8 +8,9 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       white: '#FCEDFA',
-      black: '#15032a',
-      gray: '#1d063a',
+      black: '#251E2D',
+      gray: '#342B3E',
+      light: '#4A3E57',
       pop: {
         default: '#FF269E',
         light: '#FF5ADC'
@@ -51,7 +52,7 @@ module.exports = {
           borderRadius: theme('borderRadius.md'),
           padding: `${theme('spacing.3')} ${theme('spacing.5')}`,
           letterSpacing: theme('letterSpacing.wide'),
-          color: theme('colors.pop.light'),
+          color: theme('colors.white'),
           '&::placeholder': {
             color: theme('colors.pop.default'),
           },
@@ -59,22 +60,20 @@ module.exports = {
             boxShadow: defaultTheme.boxShadow.none,
             borderColor: theme('colors.transparent'),
             '&::placeholder': {
-              color: theme('colors.pop.light')
+              color: theme('colors.white')
             },
           }
         },
       },
       pop: {
         'input, textarea, multiselect, select': {
-          color: theme('colors.pop.light'),
           '&::placeholder': {
             color: theme('colors.pop.default'),
-          }
+          },
         },
       },
       ultraviolet: {
         'input, textarea, multiselect, select': {
-          color: theme('colors.ultraviolet.light'),
           '&::placeholder': {
             color: theme('colors.ultraviolet.default'),
           },
@@ -82,7 +81,6 @@ module.exports = {
       },
       lightning: {
         'input, textarea, multiselect, select': {
-          color: theme('colors.lightning.light'),
           '&::placeholder': {
             color: theme('colors.lightning.default'),
           },
@@ -90,7 +88,6 @@ module.exports = {
       },
       glowworm: {
         'input, textarea, multiselect, select': {
-          color: theme('colors.glowworm.light'),
           '&::placeholder': {
             color: theme('colors.glowworm.default'),
           },
@@ -98,7 +95,6 @@ module.exports = {
       },
       firefly: {
         'input, textarea, multiselect, select': {
-          color: theme('colors.firefly.light'),
           '&::placeholder': {
             color: theme('colors.firefly.default'),
           },
@@ -106,7 +102,6 @@ module.exports = {
       },
       flame: {
         'input, textarea, multiselect, select': {
-          color: theme('colors.flame.light'),
           '&::placeholder': {
             color: theme('colors.flame.default'),
           },
