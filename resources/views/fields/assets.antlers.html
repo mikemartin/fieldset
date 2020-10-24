@@ -1,7 +1,7 @@
-<div class="{{ partial:fields/width }}">
+<div class="{{ partial:_partials/width }}">
   <div class="grid grid-cols-1 row-gap-6 sm:grid-cols-2 sm:col-gap-8">
     <div class="sm:col-span-1">
-      {{ svg :src="value" class="w-full" }}
+      {{ svg src="{value}" class="w-full" }}
       <p class="mt-2 text-white text-center text-sm lg:text-base leading-5 lg:leading-6 lg:text-base">
         {{ value }}
           {{ basename }}

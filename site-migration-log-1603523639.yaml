@@ -1,0 +1,436 @@
+-
+  migration: Roles
+  handle: roles
+  error: 'Roles cannot be found at path [site/settings/users/roles.yaml].'
+-
+  migration: Groups
+  handle: groups
+  error: 'Groups cannot be found at path [site/settings/users/groups.yaml].'
+-
+  migration: Settings
+  handle: cp
+  exception: 'File does not exist at path /var/www/site/settings/cp.yaml.'
+  trace:
+    -
+      file: /var/www/vendor/statamic/migrator/src/SettingsMigrator.php
+      line: 219
+      function: get
+      class: Illuminate\Filesystem\Filesystem
+      type: '->'
+      args:
+        - /var/www/site/settings/cp.yaml
+    -
+      file: /var/www/vendor/statamic/migrator/src/SettingsMigrator.php
+      line: 46
+      function: parseSettingsFile
+      class: Statamic\Migrator\SettingsMigrator
+      type: '->'
+      args:
+        - cp.yaml
+    -
+      file: /var/www/vendor/statamic/migrator/src/SettingsMigrator.php
+      line: 167
+      function: migrateCp
+      class: Statamic\Migrator\SettingsMigrator
+      type: '->'
+      args: {  }
+    -
+      file: /var/www/vendor/statamic/migrator/src/SettingsMigrator.php
+      line: 20
+      function: migrateSingle
+      class: Statamic\Migrator\SettingsMigrator
+      type: '->'
+      args: {  }
+    -
+      file: /var/www/vendor/statamic/migrator/src/Commands/MigrateSite.php
+      line: 350
+      function: migrate
+      class: Statamic\Migrator\SettingsMigrator
+      type: '->'
+      args: {  }
+    -
+      file: /var/www/vendor/statamic/migrator/src/Commands/MigrateSite.php
+      line: 377
+      function: 'Statamic\Migrator\Commands\{closure}'
+      class: Statamic\Migrator\Commands\MigrateSite
+      type: '->'
+      args: {  }
+    -
+      file: /var/www/vendor/statamic/migrator/src/Commands/MigrateSite.php
+      line: 349
+      function: tryMigration
+      class: Statamic\Migrator\Commands\MigrateSite
+      type: '->'
+      args:
+        - null
+        - Settings
+        - cp
+    -
+      file: /var/www/vendor/statamic/migrator/src/Commands/MigrateSite.php
+      line: 280
+      function: runMigratorOnHandle
+      class: Statamic\Migrator\Commands\MigrateSite
+      type: '->'
+      args:
+        - Statamic\Migrator\SettingsMigrator
+        - cp
+    -
+      file: /var/www/vendor/statamic/migrator/src/Commands/MigrateSite.php
+      line: 114
+      function: migrateSettings
+      class: Statamic\Migrator\Commands\MigrateSite
+      type: '->'
+      args: {  }
+    -
+      function: handle
+      class: Statamic\Migrator\Commands\MigrateSite
+      type: '->'
+      args: {  }
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+      line: 37
+      function: call_user_func_array
+      args:
+        -
+          - null
+          - handle
+        - {  }
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Container/Util.php
+      line: 37
+      function: 'Illuminate\Container\{closure}'
+      class: Illuminate\Container\BoundMethod
+      type: '::'
+      args: {  }
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+      line: 95
+      function: unwrapIfClosure
+      class: Illuminate\Container\Util
+      type: '::'
+      args:
+        - null
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+      line: 39
+      function: callBoundMethod
+      class: Illuminate\Container\BoundMethod
+      type: '::'
+      args:
+        - null
+        -
+          - null
+          - handle
+        - null
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Container/Container.php
+      line: 596
+      function: call
+      class: Illuminate\Container\BoundMethod
+      type: '::'
+      args:
+        - null
+        -
+          - null
+          - handle
+        - {  }
+        - null
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Console/Command.php
+      line: 134
+      function: call
+      class: Illuminate\Container\Container
+      type: '->'
+      args:
+        -
+          - null
+          - handle
+    -
+      file: /var/www/vendor/symfony/console/Command/Command.php
+      line: 258
+      function: execute
+      class: Illuminate\Console\Command
+      type: '->'
+      args:
+        - null
+        - null
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Console/Command.php
+      line: 121
+      function: run
+      class: Symfony\Component\Console\Command\Command
+      type: '->'
+      args:
+        - null
+        - null
+    -
+      file: /var/www/vendor/symfony/console/Application.php
+      line: 920
+      function: run
+      class: Illuminate\Console\Command
+      type: '->'
+      args:
+        - null
+        - null
+    -
+      file: /var/www/vendor/symfony/console/Application.php
+      line: 266
+      function: doRunCommand
+      class: Symfony\Component\Console\Application
+      type: '->'
+      args:
+        - null
+        - null
+        - null
+    -
+      file: /var/www/vendor/symfony/console/Application.php
+      line: 142
+      function: doRun
+      class: Symfony\Component\Console\Application
+      type: '->'
+      args:
+        - null
+        - null
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Console/Application.php
+      line: 93
+      function: run
+      class: Symfony\Component\Console\Application
+      type: '->'
+      args:
+        - null
+        - null
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php
+      line: 129
+      function: run
+      class: Illuminate\Console\Application
+      type: '->'
+      args:
+        - null
+        - null
+    -
+      file: /var/www/please
+      line: 37
+      function: handle
+      class: Illuminate\Foundation\Console\Kernel
+      type: '->'
+      args:
+        - null
+        - null
+-
+  migration: Settings
+  handle: routes
+  exception: 'File does not exist at path /var/www/site/settings/routes.yaml.'
+  trace:
+    -
+      file: /var/www/vendor/statamic/migrator/src/SettingsMigrator.php
+      line: 219
+      function: get
+      class: Illuminate\Filesystem\Filesystem
+      type: '->'
+      args:
+        - /var/www/site/settings/routes.yaml
+    -
+      file: /var/www/vendor/statamic/migrator/src/SettingsMigrator.php
+      line: 65
+      function: parseSettingsFile
+      class: Statamic\Migrator\SettingsMigrator
+      type: '->'
+      args:
+        - routes.yaml
+    -
+      file: /var/www/vendor/statamic/migrator/src/SettingsMigrator.php
+      line: 167
+      function: migrateRoutes
+      class: Statamic\Migrator\SettingsMigrator
+      type: '->'
+      args: {  }
+    -
+      file: /var/www/vendor/statamic/migrator/src/SettingsMigrator.php
+      line: 20
+      function: migrateSingle
+      class: Statamic\Migrator\SettingsMigrator
+      type: '->'
+      args: {  }
+    -
+      file: /var/www/vendor/statamic/migrator/src/Commands/MigrateSite.php
+      line: 350
+      function: migrate
+      class: Statamic\Migrator\SettingsMigrator
+      type: '->'
+      args: {  }
+    -
+      file: /var/www/vendor/statamic/migrator/src/Commands/MigrateSite.php
+      line: 377
+      function: 'Statamic\Migrator\Commands\{closure}'
+      class: Statamic\Migrator\Commands\MigrateSite
+      type: '->'
+      args: {  }
+    -
+      file: /var/www/vendor/statamic/migrator/src/Commands/MigrateSite.php
+      line: 349
+      function: tryMigration
+      class: Statamic\Migrator\Commands\MigrateSite
+      type: '->'
+      args:
+        - null
+        - Settings
+        - routes
+    -
+      file: /var/www/vendor/statamic/migrator/src/Commands/MigrateSite.php
+      line: 281
+      function: runMigratorOnHandle
+      class: Statamic\Migrator\Commands\MigrateSite
+      type: '->'
+      args:
+        - Statamic\Migrator\SettingsMigrator
+        - routes
+    -
+      file: /var/www/vendor/statamic/migrator/src/Commands/MigrateSite.php
+      line: 114
+      function: migrateSettings
+      class: Statamic\Migrator\Commands\MigrateSite
+      type: '->'
+      args: {  }
+    -
+      function: handle
+      class: Statamic\Migrator\Commands\MigrateSite
+      type: '->'
+      args: {  }
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+      line: 37
+      function: call_user_func_array
+      args:
+        -
+          - null
+          - handle
+        - {  }
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Container/Util.php
+      line: 37
+      function: 'Illuminate\Container\{closure}'
+      class: Illuminate\Container\BoundMethod
+      type: '::'
+      args: {  }
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+      line: 95
+      function: unwrapIfClosure
+      class: Illuminate\Container\Util
+      type: '::'
+      args:
+        - null
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php
+      line: 39
+      function: callBoundMethod
+      class: Illuminate\Container\BoundMethod
+      type: '::'
+      args:
+        - null
+        -
+          - null
+          - handle
+        - null
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Container/Container.php
+      line: 596
+      function: call
+      class: Illuminate\Container\BoundMethod
+      type: '::'
+      args:
+        - null
+        -
+          - null
+          - handle
+        - {  }
+        - null
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Console/Command.php
+      line: 134
+      function: call
+      class: Illuminate\Container\Container
+      type: '->'
+      args:
+        -
+          - null
+          - handle
+    -
+      file: /var/www/vendor/symfony/console/Command/Command.php
+      line: 258
+      function: execute
+      class: Illuminate\Console\Command
+      type: '->'
+      args:
+        - null
+        - null
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Console/Command.php
+      line: 121
+      function: run
+      class: Symfony\Component\Console\Command\Command
+      type: '->'
+      args:
+        - null
+        - null
+    -
+      file: /var/www/vendor/symfony/console/Application.php
+      line: 920
+      function: run
+      class: Illuminate\Console\Command
+      type: '->'
+      args:
+        - null
+        - null
+    -
+      file: /var/www/vendor/symfony/console/Application.php
+      line: 266
+      function: doRunCommand
+      class: Symfony\Component\Console\Application
+      type: '->'
+      args:
+        - null
+        - null
+        - null
+    -
+      file: /var/www/vendor/symfony/console/Application.php
+      line: 142
+      function: doRun
+      class: Symfony\Component\Console\Application
+      type: '->'
+      args:
+        - null
+        - null
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Console/Application.php
+      line: 93
+      function: run
+      class: Symfony\Component\Console\Application
+      type: '->'
+      args:
+        - null
+        - null
+    -
+      file: /var/www/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php
+      line: 129
+      function: run
+      class: Illuminate\Console\Application
+      type: '->'
+      args:
+        - null
+        - null
+    -
+      file: /var/www/please
+      line: 37
+      function: handle
+      class: Illuminate\Foundation\Console\Kernel
+      type: '->'
+      args:
+        - null
+        - null
+-
+  migration: Theme
+  handle: redwood
+  error: 'Theme folder cannot be found at path [site/themes/redwood].'

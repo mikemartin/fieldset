@@ -15,8 +15,10 @@ class Fieldset extends Tags
      */
      public function __call($method, $args)
      {
-         $from = Arr::get($this->context, $method)->raw();
-         $this->parameters['from'] = $from;
+         $from = Arr::get($this->context, $method);
+
+         $this->params['from'] = $from;
+         
          return $this->index();
      }
 
@@ -26,10 +28,10 @@ class Fieldset extends Tags
      * @return array
      */
     public function index()
-    {
-      $entry = $this->fetchEntry($this->get('from'));
-      $blueprint = $this->fetchFields($entry);
+    {      
 
+      $entry = $this->fetchEntry($this->params->get('from'));
+      $blueprint = $this->fetchFields($entry);
       $fields = $this->mapFields($entry, $blueprint);
 
       return $fields->all();
@@ -56,7 +58,8 @@ class Fieldset extends Tags
 
     private function fetchFields($entry)
     {
-      $blueprint = $entry['blueprint'];
+      $blueprint = $entry['blueprint_is_reserved'];
+      
       return Facades\Fieldset::find($blueprint)->contents()['fields'];
     }
 

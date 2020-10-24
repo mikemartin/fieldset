@@ -3,7 +3,7 @@ title: Recipe
 photo: examples/presentation_1336b40a-8b95-4583-9baf-6c94e695fcdb.jpeg
 cooking_time: '00:30'
 serving_size: 4
-blueprint: recipe
+blueprint_is_reserved: recipe
 cookware:
   - 'chef''s knife'
   - 'cutting board'

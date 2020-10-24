@@ -9,7 +9,7 @@ parking: 2
 property_type: house
 updated_by: ac214142-16d4-46fb-8870-576ca392afb2
 updated_at: 1589631963
-blueprint: real_estate_property
+blueprint_is_reserved: real_estate_property
 photos:
   - examples/photo-1556955112-28cde3817b0a.jpeg
   - examples/photo-1505691723518-36a5ac3be353.jpeg

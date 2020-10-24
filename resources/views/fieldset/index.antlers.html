@@ -14,7 +14,7 @@
         <div class="group flex overflow-hidden flex-col bg-gray text-white text-opacity-75 rounded-md group block w-full transition duration-150 ease-in-out transform hover:-translate-y-1 hover:shadow-xl">
             <a href="{{ url }}" class="p-6 flex-1 flex items-start space-x-5">
               <div class="flex w-12 h-12">
-                {{ svg :src="icon" class="text-{{ color.label }} group-hover:text-{{ color.label }}-light w-full" }}
+                {{ svg src="{icon}" class="text-{{ color.label }} group-hover:text-{{ color.label }}-light w-full" }}
               </div>
               <div class="flex-1">
                 <p class="w-full lg:flex lg:justify-between font-bold lg:items-center text-white leading-6 lg:leading-7 text-base lg:text-lg">
@@ -39,7 +39,7 @@
               </div>
               <div class="ml-2 flex items-baseline text-sm leading-5">
                 <a href="#" class="self-center flex-shrink-0 inline-block text-black text-opacity-75 hover:text-opacity-100 hover:text-{{ color.label }}">
-                  {{ svg:heart class="h-5 w-5 text-current" }}
+                  {{ svg src="heart" class="h-5 w-5 text-current" }}
                 </a>
                 <span class="sr-only">Likes</span>
                 <span class="ml-1">5</span>

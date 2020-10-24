@@ -1,13 +1,13 @@
-<div class="{{ partial:fields/width }}">
+<div class="{{ partial:_partials/width }}">
   <label for="{{ handle }}" class="block text-base uppercase tracking-wide leading-8 text-{{ color.label }}">{{ display }}</label>
   {{ value }}
   <a href="/{{ handle|singular }}" class="group flex rounded-md border border-light bg-gray hover:border-{{ color.label }}-light hover:bg-{{ color.label }} transition duration-150 ease-in-out transform hover:-translate-y-px">
     <span class="inline-flex items-center py-3 rounded-l-md text-{{ color.label }} border-r border-black border-opacity-75 group-hover:text-black">
-      {{ svg:drag-dots class="h-5 w-5 text-{{ color.label }} group-hover:text-black fill-current stroke-current" }}
+      {{ svg src="drag-dots" class="h-5 w-5 text-{{ color.label }} group-hover:text-black fill-current stroke-current" }}
     </span>
     <div class="flex text-white group-hover:text-black items-center justify-between flex-1 px-3 rounded-l-none lg:text-base transition duration-150 ease-in-out">
       <span class="inline-flex items-center">
-        {{ svg:dot class="mr-1.5 h-2 w-2 text-{{ color.label }} group-hover:text-black" }}
+        {{ svg src="dot" class="mr-1.5 h-2 w-2 text-{{ color.label }} group-hover:text-black" }}
         {{ title }}
       </span>
       <span class="text-xs uppercase tracking-wide text-{{ color.label }} group-hover:text-black">{{ display }}</span>

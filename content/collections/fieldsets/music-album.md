@@ -10,7 +10,7 @@ blueprint: fieldset
 template: fieldset/show
 example: 62a05c4e-2882-4823-b415-f0237106cda7
 author: ac214142-16d4-46fb-8870-576ca392afb2
-icon: icons/vinyl-record.svg
+icon: assets/icons/vinyl-record
 color:
   label: pop
   value:

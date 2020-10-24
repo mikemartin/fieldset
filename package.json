@@ -15,7 +15,7 @@
         "axios": "^0.19.2",
         "browser-sync": "^2.26.7",
         "browser-sync-webpack-plugin": "^2.0.1",
-        "cross-env": "^5.1",
+        "cross-env": "^5.2.1",
         "laravel-mix": "^4.0",
         "laravel-mix-purgecss": "^4.1.0",
         "postcss-color-function": "^4.1.0",
