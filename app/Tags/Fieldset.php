@@ -70,6 +70,7 @@ class Fieldset extends Tags
       return $fields->flatMap(function($field) use ($entry) {
         $field['field']['handle'] = $field['handle'];
         $field['field']['value'] = $entry[$field['handle']];
+        var_dump([$field['field']]);
         return [$field['field']];
       });
     }
