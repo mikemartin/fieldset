@@ -1,16 +1,8 @@
 title: Pages
 template: default
 layout: layout
-blueprints:
-  - default
-  - fieldset
 revisions: false
 route: '{parent_uri}/{slug}'
 sort_dir: asc
 structure:
   root: true
-  tree:
-    -
-      entry: home
-    -
-      entry: eee5291a-c943-432a-9c7c-8e79bb10ee97
