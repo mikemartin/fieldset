@@ -17,17 +17,7 @@
     <aside class="lg:col-span-2">
       <div class="mx-auto max-w-3xl grid grid-cols-1 row-gap-6 sm:grid-cols-6 sm:col-gap-8">
         {{ fieldset:example }}
-          {{ if type == "assets" }}
-            {{ partial src="fields/assets" }}
-          {{ elseif type == 'date' }}
-            {{ partial src="fields/date" }}
-          {{ elseif type == 'entries' }}
-            {{ partial src="fields/entries" }}
-          {{ elseif type == 'grid' }}
-            {{ partial src="fields/grid" }}
-          {{ else }}
-            {{ partial src="fields/default" }}
-          {{ /if }}
+            {{ partial_fallback src="fields/{type},fields/missing" }}
         {{ /fieldset:example }}
       </div>
     </aside>

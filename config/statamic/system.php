@@ -2,94 +2,112 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | License Key
-    |--------------------------------------------------------------------------
-    |
-    | The license key for the corresponding domain from your Statamic account.
-    | Without a key entered, you will considered to be in Trial Mode.
-    |
-    | https://docs.statamic.com/knowledge-base/trial-mode
-    |
-    */
+  /*
+  |--------------------------------------------------------------------------
+  | License Key
+  |--------------------------------------------------------------------------
+  |
+  | The license key for the corresponding domain from your Statamic account.
+  | Without a key entered, your app will considered to be in Trial Mode.
+  |
+  | https://statamic.dev/licensing#trial-mode
+  |
+  */
 
-    'license_key' => env('STATAMIC_LICENSE_KEY'),
+  'license_key' => env('STATAMIC_LICENSE_KEY'),
 
-    /*
-    |--------------------------------------------------------------------------
-    | Default Addons Paths
-    |--------------------------------------------------------------------------
-    |
-    | When generating addons via `php please make:addon`, this path will be
-    | used by default. You can still specify custom repository paths in
-    | your composer.json, but this is the path used by the generator.
-    |
-    */
+  /*
+  |--------------------------------------------------------------------------
+  | Default Addons Paths
+  |--------------------------------------------------------------------------
+  |
+  | When generating addons via `php please make:addon`, this path will be
+  | used by default. You can still specify custom repository paths in
+  | your composer.json, but this is the path used by the generator.
+  |
+  */
 
-    'addons_path' => base_path('addons'),
+  'addons_path' => base_path('addons'),
 
-    /*
-    |--------------------------------------------------------------------------
-    | Send the Powered-By Header
-    |--------------------------------------------------------------------------
-    |
-    | Websites like builtwith.com use the X-Powered-By header to determine
-    | what technologies are used on a particular site. By default, we'll
-    | send this header, but you are absolutely allowed to disable it.
-    |
-    */
+  /*
+  |--------------------------------------------------------------------------
+  | Send the Powered-By Header
+  |--------------------------------------------------------------------------
+  |
+  | Websites like builtwith.com use the X-Powered-By header to determine
+  | what technologies are used on a particular site. By default, we'll
+  | send this header, but you are absolutely allowed to disable it.
+  |
+  */
 
-    'send_powered_by_header' => true,
+  'send_powered_by_header' => true,
 
-    /*
-    |--------------------------------------------------------------------------
-    | Maximum PHP memory limit
-    |--------------------------------------------------------------------------
-    |
-    | The maximum memory that will be used when performing intensive operations
-    | like image manipulation. Leave blank to use as much as possible. You
-    | may either specify bytes or PHP recognized shorthand values.
-    |
-    | http://php.net/manual/en/faq.using.php#faq.using.shorthandbytes
-    |
-    */
+  /*
+  |--------------------------------------------------------------------------
+  | Default Date Format
+  |--------------------------------------------------------------------------
+  |
+  | Any time a Carbon date is cast to a string, it should use this format.
+  | You can customize this format using PHP's date string constants.
+  |
+  | https://www.php.net/manual/en/function.date.php
+  |
+  */
 
-    'php_max_memory_limit' => null,
+  'date_format' => 'F jS, Y',
 
-    /*
-    |--------------------------------------------------------------------------
-    | Default Date Format
-    |--------------------------------------------------------------------------
-    |
-    | Any time Carbon is cast to a string in views, it should use this format.
-    |
-    */
+  /*
+  |--------------------------------------------------------------------------
+  | Default Character Set
+  |--------------------------------------------------------------------------
+  |
+  | Statamic will use this character set when performing specific string
+  | encoding and decoding operations; This does not apply everywhere.
+  |
+  */
 
-    'date_format' => 'F jS, Y',
+  'charset' => 'UTF-8',
 
-    'charset' => 'UTF-8',
-    'timezone' => 'UTC',
-    'protect' => [],
+  /*
+  |--------------------------------------------------------------------------
+  | Track Last Update
+  |--------------------------------------------------------------------------
+  |
+  | Statamic will automatically set an `updated_at` timestamp (along with
+  | `updated_by`, where applicable) when specific content is updated.
+  | In some situations, you may wish disable this functionality.
+  |
+  */
 
-    'stache' => [
-        'always_update' => true,
-    ],
+  'track_last_update' => true,
 
-    /*
-    |--------------------------------------------------------------------------
-    | Intensive Operations
-    |--------------------------------------------------------------------------
-    |
-    | Sometimes Statamic requires extra resources to complete intensive
-    | operations. Here you may configure system resource limits for
-    | those rare times when we need to turn things up to eleven!
-    |
-    */
+  /*
+  |--------------------------------------------------------------------------
+  | Enable Cache Tags
+  |--------------------------------------------------------------------------
+  |
+  | Sometimes you'll want to be able to disable the {{ cache }} tags in
+  | Antlers, so here is where you can do that. Otherwise, it will be
+  | enabled all the time.
+  |
+  */
 
-    'php_memory_limit' => '-1',
-    'php_max_execution_time' => '-1',
-    'ajax_timeout' => '600000',
-    'pcre_backtrack_limit' => '-1',
+  'cache_tags_enabled' => env('STATAMIC_CACHE_TAGS_ENABLED', true),
+
+  /*
+  |--------------------------------------------------------------------------
+  | Intensive Operations
+  |--------------------------------------------------------------------------
+  |
+  | Sometimes Statamic requires extra resources to complete intensive
+  | operations. Here you may configure system resource limits for
+  | those rare times when we need to turn things up to eleven!
+  |
+  */
+
+  'php_memory_limit' => '-1',
+  'php_max_execution_time' => '-1',
+  'ajax_timeout' => '600000',
+  'pcre_backtrack_limit' => '-1',
 
 ];

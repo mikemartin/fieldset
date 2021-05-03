@@ -3863,8 +3863,8 @@ window.axios = axios__WEBPACK_IMPORTED_MODULE_1___default.a;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mike/Sites/fieldset/resources/js/site.js */"./resources/js/site.js");
-module.exports = __webpack_require__(/*! /Users/mike/Sites/fieldset/resources/css/tailwind.css */"./resources/css/tailwind.css");
+__webpack_require__(/*! /var/www/resources/js/site.js */"./resources/js/site.js");
+module.exports = __webpack_require__(/*! /var/www/resources/css/tailwind.css */"./resources/css/tailwind.css");
 
 
 /***/ })

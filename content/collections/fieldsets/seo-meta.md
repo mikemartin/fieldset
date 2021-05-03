@@ -8,7 +8,7 @@ social_image: site
 updated_by: ac214142-16d4-46fb-8870-576ca392afb2
 updated_at: 1590832802
 author: ac214142-16d4-46fb-8870-576ca392afb2
-icon: icons/search-1.svg
+icon: assets/icons/search-1.svg
 color:
   label: firefly
   value:

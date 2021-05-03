@@ -1,0 +1,18 @@
+<div class="{{ partial:_partials/width }}">
+  <label for="{{ handle }}" class="block text-base uppercase tracking-wide leading-8 text-{{ color.label }}">{{ display }}</label>  
+  <div readonly placeholder="{{ placeholder }}" style="margin:0;padding:0;" type="{{ input_type ?? 'text' }}" name="{{ handle }}" class="form-input form-input-{{ color.label }} w-full transition duration-150 ease-in-out">
+    <div class="flex">
+      <div class="lg:text-base p-3 bg-black rounded-l">
+        <span class="text-gray-500 sm:text-sm sm:leading-5">
+          URL
+        </span>
+      </div>
+      <div class="lg:text-base p-3">
+        {{ value }}
+      </div>
+    </div>
+    <div class="p-10">
+      <iframe width="560" height="315" src="{{ value | embed_url }}" frameborder="0" class="m-auto"></iframe>
+    </div>
+  </div>
+</div>

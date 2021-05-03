@@ -3,7 +3,7 @@ title: Product
 price: '649.00'
 updated_by: ac214142-16d4-46fb-8870-576ca392afb2
 updated_at: 1589700769
-blueprint: product
+blueprint_is_reserved: product
 images:
   - examples/move-hero.png
   - examples/move-dock-hover.png

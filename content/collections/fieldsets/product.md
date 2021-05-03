@@ -8,7 +8,7 @@ social_image: site
 updated_by: ac214142-16d4-46fb-8870-576ca392afb2
 updated_at: 1590832787
 author: ac214142-16d4-46fb-8870-576ca392afb2
-icon: icons/products-purse-1.svg
+icon: assets/icons/products-purse-1.svg
 color:
   label: ultraviolet
   value:

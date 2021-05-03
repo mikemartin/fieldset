@@ -4,8 +4,8 @@ artist: 'David Bowie'
 release_date: '1973-04-19 07:15'
 updated_by: ac214142-16d4-46fb-8870-576ca392afb2
 updated_at: 1589717003
-blueprint: music_album
-artwork: examples/bowie.svg
+blueprint_is_reserved: music_album
+artwork: assets/examples/bowie.svg
 credits:
   -
     name: 'David Bowie'

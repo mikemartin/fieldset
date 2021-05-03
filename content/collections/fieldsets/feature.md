@@ -8,7 +8,7 @@ updated_by: ac214142-16d4-46fb-8870-576ca392afb2
 updated_at: 1590832794
 example: ba88d7f3-85f4-4e26-ab7b-500e616a88f9
 author: ac214142-16d4-46fb-8870-576ca392afb2
-icon: icons/check-badge.svg
+icon: assets/icons/check-badge.svg
 color:
   label: lightning
   value:
