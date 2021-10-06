@@ -4,14 +4,14 @@
     "keywords": ["statamic", "cms", "flat file", "laravel"],
     "type": "project",
     "require": {
-        "php": "^7.2.5",
+        "php": "^7.3 || ^8.0",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "rias/statamic-color-swatches": "^2.0",
-        "statamic/cms": "3.0.*@beta"
+        "statamic/cms": "3.1.*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
@@ -48,6 +48,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "pre-update-cmd": [
+            "Statamic\\Console\\Composer\\Scripts::preUpdateCmd"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi",
