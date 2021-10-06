@@ -18,8 +18,8 @@ return [
         'default' => [
             'name' => config('app.name'),
             'locale' => 'en_US',
-            'url' => env('APP_URL', 'http://localhost'),
-        ]
+            'url' => '/',
+        ],
 
-    ]
+    ],
 ];

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87c03db00c3b5f8e2dfe698eab48f34e",
+    "content-hash": "521889caa1a36e4cb30f9a457fe7b952",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3253,6 +3253,7 @@
             "keywords": [
                 "prosemirror"
             ],
+            "abandoned": "ueberdosis/html-to-prosemirror",
             "time": "2020-01-31T10:17:48+00:00"
         },
         {
@@ -3296,6 +3297,7 @@
             "keywords": [
                 "prosemirror"
             ],
+            "abandoned": "ueberdosis/prosemirror-to-html",
             "time": "2020-01-31T10:03:49+00:00"
         },
         {
@@ -5613,6 +5615,7 @@
                 "commonmark",
                 "markdown"
             ],
+            "abandoned": "league/commonmark",
             "time": "2019-09-11T21:27:00+00:00"
         },
         {
@@ -7791,9 +7794,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "statamic/cms": 10
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
