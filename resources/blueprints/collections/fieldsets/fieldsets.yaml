@@ -47,14 +47,17 @@ sections:
       -
         handle: example
         field:
-          max_items: 1
-          mode: default
-          type: entries
+          theme: material
+          mode: yaml
+          indent_type: tabs
+          indent_size: 4
+          key_map: default
+          line_numbers: true
+          line_wrapping: true
+          type: code
           localizable: false
           listable: hidden
           display: Example
-          collections:
-            - examples
       -
         handle: fieldset
         field:
