@@ -1,8 +1,15 @@
-const colors = require('@tailwindcss/ui/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: [],
+  mode: 'jit',
+  purge: {
+    content: [
+      './resources/**/*.antlers.html',
+      './resources/**/*.blade.php',
+      './resources/**/*.vue',
+      './content/**/*.md'
+    ]
+  },
   theme: {
     colors: {
       transparent: 'transparent',

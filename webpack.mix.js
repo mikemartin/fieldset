@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-require('laravel-mix-purgecss');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -45,7 +44,7 @@ if (mix.inProduction()) {
  */
 
 
-mix.vue('resources/js/cp.js', 'public/vendor/app/js')
+mix.js('resources/js/cp.js', 'public/vendor/app/js').vue();
 
 mix.postCss('resources/css/cp.css', 'public/vendor/app/css', [
   require('postcss-import'),

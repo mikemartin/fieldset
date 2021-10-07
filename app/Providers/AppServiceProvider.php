@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Fieldtypes\FieldGroup;
 use App\Fieldtypes\DynamicFieldGroup;
 use Statamic\Statamic;
+use Statamic\Facades\CP\Nav;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,5 +31,14 @@ class AppServiceProvider extends ServiceProvider
       FieldGroup::register();
       Statamic::script('app', 'cp');
       Statamic::style('app', 'cp');
+      
+      Nav::extend(function ($nav) {
+        $nav->fields('Fieldset.dev')
+            ->icon('fieldsets')
+            ->route('fieldset-dev.index');
+      });
+
     }
+
+    
 }

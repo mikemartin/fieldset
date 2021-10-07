@@ -4,6 +4,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Statamic\Facades\Fieldset;
 use Statamic\Facades\File;
+use Statamic\Facades\Collection;
+use Statamic\Facades\Entry;
+use Statamic\Facades\URL;
+use Statamic\Support\Str;
+use Stringy\StaticStringy;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +23,39 @@ use Statamic\Facades\File;
 */
 
 Route::get('/fieldsets', function () {
-  return collect(array_values(Fieldset::all()->all()))->map(function ($fieldset) {
-    return [
-        'handle' => $fieldset->handle(),
-        'title' => $fieldset->title()
+  $entries = Collection::findByHandle('fieldsets')->queryEntries()->get()
+  ->filter(function ($value) {
+    return isset($value->data()['fieldset'], Fieldset::all()[$value->data()['fieldset']]); 
+  })->map(function ($fieldset) {
+
+      $cascade = [
+        resource_path('svg'),
+        resource_path(),
+        public_path('svg'),
+        public_path('assets'),
+        public_path(),
+      ];
+
+      $svg = null;
+
+      foreach ($cascade as $location) {
+          $file = Url::assemble($location, $fieldset->data()["icon"]);
+          if (File::exists($file)) {
+              $svg = StaticStringy::collapseWhitespace(
+                  File::get($file)
+              );
+              break;
+          }
+      }
+
+        return [
+        'handle' => $fieldset->data()["fieldset"],
+        'title' => $fieldset->data()["title"],
+        'id' => $fieldset->id(),
+        'icon' => $svg,
     ];
-  });
+  })->all();
+  return array_values($entries);
 });
 
 Route::get('/fieldset/{handle}', function ($handle) {
