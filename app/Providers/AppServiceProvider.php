@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Fieldtypes\FieldGroup;
+use App\Fieldtypes\DynamicFieldGroup;
 use Statamic\Statamic;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,7 +26,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Statamic::script('app', 'cp');
-        // Statamic::style('app', 'cp');
+      DynamicFieldGroup::register();
+      FieldGroup::register();
+      Statamic::script('app', 'cp');
+      Statamic::style('app', 'cp');
     }
 }

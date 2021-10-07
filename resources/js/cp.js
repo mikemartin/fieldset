@@ -3,12 +3,13 @@
  * https://statamic.dev/extending/control-panel
  */
 
-/** Example Fieldtype
-
-import ExampleFieldtype from './components/fieldtypes/ExampleFieldtype.vue';
-
-Statamic.booting(() => {
-    Statamic.$components.register('example-fieldtype', ExampleFieldtype);
-});
-
-*/
+ import DynamicFieldGroupFieldtype from './components/fieldtypes/DynamicFieldGroupFieldtype.vue';
+ import FieldGroupFieldtype from './components/fieldtypes/FieldGroupFieldtype.vue';
+ import FieldGroupConfig from './components/fieldtypes/FieldGroupConfigFieldtype.vue';
+ 
+ Statamic.booting(() => {
+     Statamic.$components.register('dynamic_field_group-fieldtype', DynamicFieldGroupFieldtype);
+     Statamic.$components.register('fieldgroup-fieldtype', FieldGroupFieldtype);
+     Statamic.$components.register('fieldgroup_config-fieldtype', FieldGroupConfig); 
+ });
+ 

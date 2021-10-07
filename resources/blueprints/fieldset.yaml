@@ -55,6 +55,21 @@ sections:
           display: Example
           collections:
             - examples
+      -
+        handle: fieldset_handle
+        field:
+          input_type: text
+          type: text
+          localizable: false
+          listable: hidden
+          display: 'Fieldset Ref'
+      -
+        handle: dynamic_field_group
+        field:
+          type: dynamic_field_group
+          localizable: false
+          listable: hidden
+          display: Dynamic_field_group
   seo:
     display: SEO
     fields:
