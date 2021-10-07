@@ -55,6 +55,20 @@ sections:
           display: Example
           collections:
             - examples
+      -
+        handle: fieldset
+        field:
+          theme: material
+          mode: yaml
+          indent_type: tabs
+          indent_size: 4
+          key_map: default
+          line_numbers: true
+          line_wrapping: true
+          type: code
+          localizable: false
+          listable: hidden
+          display: Fieldset
   seo:
     display: SEO
     fields:
