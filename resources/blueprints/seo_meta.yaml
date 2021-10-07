@@ -1,7 +1,0 @@
-title: 'SEO Meta'
-sections:
-  main:
-    display: Main
-    fields:
-      -
-        import: seo_meta

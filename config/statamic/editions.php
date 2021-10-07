@@ -1,9 +1,7 @@
 <?php
 
 return [
-
-    'pro' => false,
-
+    'pro' => true,
     'addons' => [
         //
     ],

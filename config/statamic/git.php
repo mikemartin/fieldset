@@ -98,20 +98,7 @@ return [
         resource_path('forms'),
         resource_path('users'),
         storage_path('forms'),
-        public_path('assets'),
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Git Binary
-    |--------------------------------------------------------------------------
-    |
-    | By default, Statamic will try to use the "git" command, but you can set
-    | an absolute path to the git binary if necessary for your environment.
-    |
-    */
-
-    'binary' => env('STATAMIC_GIT_BINARY', 'git'),
 
     /*
     |--------------------------------------------------------------------------
