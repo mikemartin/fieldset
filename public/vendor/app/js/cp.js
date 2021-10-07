@@ -912,8 +912,9 @@ var _default = /*#__PURE__*/function () {
     value: function fromBlueprint(conditions) {
       var _this = this;
 
+      var prefix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
       return _.map(conditions, function (condition, field) {
-        return _this.splitRhs(field, condition);
+        return _this.splitRhs(field, condition, prefix);
       });
     }
   }, {
@@ -932,11 +933,21 @@ var _default = /*#__PURE__*/function () {
   }, {
     key: "splitRhs",
     value: function splitRhs(field, condition) {
+      var prefix = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
       return {
-        'field': field,
+        'field': this.getScopedFieldHandle(field, prefix),
         'operator': this.getOperatorFromRhs(condition),
         'value': this.getValueFromRhs(condition)
       };
+    }
+  }, {
+    key: "getScopedFieldHandle",
+    value: function getScopedFieldHandle(field, prefix) {
+      if (field.startsWith('root.') || !prefix) {
+        return field;
+      }
+
+      return prefix + field;
     }
   }, {
     key: "getOperatorFromRhs",
@@ -1037,7 +1048,7 @@ var _default = /*#__PURE__*/function () {
         return this.passesCustomCondition(this.prepareCondition(conditions));
       }
 
-      conditions = this.converter.fromBlueprint(conditions);
+      conditions = this.converter.fromBlueprint(conditions, this.field.prefix);
       var passes = this.passOnAny ? this.passesAnyConditions(conditions) : this.passesAllConditions(conditions);
       return this.showOnPass ? passes : !passes;
     }
@@ -1193,7 +1204,7 @@ var _default = /*#__PURE__*/function () {
   }, {
     key: "prepareFunctionName",
     value: function prepareFunctionName(condition) {
-      return condition.replace(new RegExp('^custom .'), '').split(':')[0];
+      return condition.replace(new RegExp('^custom '), '').split(':')[0];
     }
   }, {
     key: "prepareParams",
@@ -1226,6 +1237,10 @@ var _default = /*#__PURE__*/function () {
       if (condition.rhs === 'empty') {
         condition.lhs = _.isEmpty(condition.lhs);
         condition.rhs = true;
+      }
+
+      if (_.isObject(condition.lhs)) {
+        return false;
       }
 
       return eval("".concat(condition.lhs, " ").concat(condition.operator, " ").concat(condition.rhs));

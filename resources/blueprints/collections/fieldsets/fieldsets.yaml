@@ -45,6 +45,13 @@ sections:
           listable: hidden
           display: Description
       -
+        handle: fieldset
+        field:
+          type: dynamic_field_group
+          localizable: false
+          listable: hidden
+          display: Fieldset
+      -
         handle: example
         field:
           theme: material
@@ -57,28 +64,7 @@ sections:
           type: code
           localizable: false
           listable: hidden
-          display: Example
-      -
-        handle: dynamic_field_group
-        field:
-          type: dynamic_field_group
-          localizable: false
-          listable: hidden
-          display: Dynamic_field_group
-      -
-        handle: fieldset
-        field:
-          theme: material
-          mode: yaml
-          indent_type: tabs
-          indent_size: 4
-          key_map: default
-          line_numbers: true
-          line_wrapping: true
-          type: code
-          localizable: false
-          listable: hidden
-          display: Fieldset
+          display: Example Content
   seo:
     display: SEO
     fields:
