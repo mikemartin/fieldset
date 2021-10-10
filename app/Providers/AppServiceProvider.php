@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
       Statamic::style('app', 'cp');
       
       Nav::extend(function ($nav) {
-        $nav->fields('Fieldset.dev')
+        $nav->fields('Community')
             ->icon('fieldsets')
             ->route('fieldset-dev.index');
       });

@@ -15,4 +15,5 @@ color:
     - '#FDF50C'
     - '#FFFE7E'
 id: f926560a-8dcd-4147-bd4f-aed6eec504b9
+fieldset: seo_meta
 ---

@@ -15,4 +15,5 @@ color:
     - '#CE30FF'
     - '#FB7EFF'
 id: 1210fe5b-4884-4e6c-8bc8-349077a2fb71
+fieldset: product
 ---

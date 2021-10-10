@@ -9,6 +9,9 @@ use Statamic\Facades\Entry;
 use Statamic\Facades\URL;
 use Statamic\Support\Str;
 use Stringy\StaticStringy;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Pagination\Paginator;
+use Statamic\Extensions\Pagination\LengthAwarePaginator;
 
 
 /*
@@ -22,53 +25,76 @@ use Stringy\StaticStringy;
 |
 */
 
-Route::get('/fieldsets', function () {
-  $entries = Collection::findByHandle('fieldsets')->queryEntries()->get()
-  ->filter(function ($value) {
-    return isset($value->data()['fieldset'], Fieldset::all()[$value->data()['fieldset']]); 
-  })->map(function ($fieldset) {
+Route::get('/fieldsets', function (Request $request) {
 
-      $cascade = [
-        resource_path('svg'),
-        resource_path(),
-        public_path('svg'),
-        public_path('assets'),
-        public_path(),
-      ];
+  $page = Paginator::resolveCurrentPage();
+  $perPage = 8;
+  
+  $query = Entry::query();
+  $query->where('collection', 'fieldsets');
+  if ($search = $request->q) {
+    $query->where('title', 'like', '%' . $search . '%');
+  }
+  $query->orderBy('downloads');
+  $query->offset($page -1);
+  $query->limit($perPage);
 
-      $svg = null;
+  $entries = $query->get(["title", "subtitle", "author", "icon", "color", "installed", "fieldset"])
+  ->map(function ($fieldset) {
+    $handle = $fieldset->get("fieldset");
+    $handle = str_replace('/', '.', $handle);
+    $path = str_replace('.', '/', $handle);
+    $directory = Fieldset::directory();  
 
-      foreach ($cascade as $location) {
-          $file = Url::assemble($location, $fieldset->data()["icon"]);
-          if (File::exists($file)) {
-              $svg = StaticStringy::collapseWhitespace(
-                  File::get($file)
-              );
-              break;
-          }
-      }
+    $color = $fieldset->get("color");
+    $fieldset->color = $color["label"];
+    $fieldset->installed = (!File::exists($path = "{$directory}/{$path}.yaml"));
+    return $fieldset->data();
+  });
 
-        return [
-        'handle' => $fieldset->data()["fieldset"],
-        'title' => $fieldset->data()["title"],
-        'id' => $fieldset->id(),
-        'icon' => $svg,
-    ];
-  })->all();
-  return array_values($entries);
+  return new Paginator(
+    $entries,
+    $perPage,
+    $page,    
+    ['path' => Paginator::resolveCurrentPath()]
+  );
+
+  // Would like to do this with results
+  // filter(function ($value) {
+  //   // Filter out any enteries that are not linked to a fieldset.
+  //   // Or where the fieldset doesn't exist
+  //   return isset($value->data()['fieldset'], Fieldset::all()[$value->data()['fieldset']]); 
+  // })
+
 });
 
-Route::get('/fieldset/{handle}', function ($handle) {
 
+
+Route::get('/fieldsets/{handle}', function ($handle) {
   $handle = str_replace('/', '.', $handle);
   $path = str_replace('.', '/', $handle);
   $directory = Fieldset::directory();
 
-  if (! File::exists($path = "{$directory}/{$path}.yaml")) {
-      return null;
+  if (!File::exists($path = "{$directory}/{$path}.yaml")) {
+    return null;
   }
 
   return response(file_get_contents($path), 200)
-              ->header('Content-Type', 'text');
+    ->header('Content-Type', 'text');
+});
+
+
+Route::get('/fieldsets/save/{handle}', function ($handle) {
+  $handle = str_replace('/', '.', $handle);
+  $path = str_replace('.', '/', $handle);
+  $directory = Fieldset::directory();
+
+  if (!File::exists($path = "{$directory}/{$path}.yaml")) {
+    return null;
+  }
+
+  File::put(base_path("resources/fieldsets/test-{$handle}.yaml"), file_get_contents($path));
 
 });
+
+

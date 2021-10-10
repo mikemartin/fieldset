@@ -4,6 +4,13 @@ sections:
     display: Main
     fields:
       -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
         handle: icon
         field:
           mode: list
@@ -13,7 +20,6 @@ sections:
           allow_uploads: true
           max_files: 1
           type: assets
-          localizable: false
           listable: hidden
           display: Icon
           width: 50
@@ -23,7 +29,6 @@ sections:
           max_items: 1
           mode: default
           type: users
-          localizable: false
           listable: hidden
           display: Author
           width: 50
@@ -33,7 +38,6 @@ sections:
         handle: subtitle
         field:
           type: textarea
-          localizable: false
           listable: hidden
           display: Subtitle
       -
@@ -41,14 +45,12 @@ sections:
         field:
           input_type: text
           type: text
-          localizable: false
           listable: hidden
           display: Description
       -
         handle: fieldset
         field:
           type: dynamic_field_group
-          localizable: false
           listable: hidden
           display: Fieldset
       -
@@ -62,11 +64,31 @@ sections:
           line_numbers: true
           line_wrapping: true
           type: code
-          localizable: false
           listable: hidden
-          display: Example Content
+          display: 'Example Content'
+      -
+        handle: downloads
+        field:
+          input_type: text
+          antlers: false
+          display: Downloads
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
   seo:
     display: SEO
     fields:
       -
         import: seo_meta
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required

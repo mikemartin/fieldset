@@ -6,12 +6,14 @@
  import DynamicFieldGroupFieldtype from './components/fieldtypes/DynamicFieldGroupFieldtype.vue';
  import FieldGroupFieldtype from './components/fieldtypes/FieldGroupFieldtype.vue';
  import FieldGroupConfig from './components/fieldtypes/FieldGroupConfigFieldtype.vue';
- import FieldsetDevSearch from './components/fieldtypes/FieldsetDevSearch';
+ import FieldsetList from './components/fieldtypes/FieldsetList';
+ import FieldsetDetails from './components/fieldtypes/FieldsetDetails';
 
  Statamic.booting(() => {
      Statamic.$components.register('dynamic_field_group-fieldtype', DynamicFieldGroupFieldtype);
      Statamic.$components.register('fieldgroup-fieldtype', FieldGroupFieldtype);
      Statamic.$components.register('fieldgroup_config-fieldtype', FieldGroupConfig); 
-     Statamic.$components.register('fieldset-search', FieldsetDevSearch);
+     Statamic.$components.register('fieldset-list', FieldsetList);
+     Statamic.$components.register('fieldset-details', FieldsetDetails);
  });
  
