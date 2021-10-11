@@ -1,0 +1,246 @@
+title: Product
+fields:
+  -
+    handle: images
+    field:
+      mode: grid
+      container: assets
+      restrict: false
+      allow_uploads: true
+      max_files: 4
+      type: assets
+      localizable: false
+      listable: hidden
+      display: Images
+  -
+    handle: price
+    field:
+      placeholder: '0.00'
+      input_type: text
+      prepend: $
+      type: text
+      localizable: false
+      listable: hidden
+      display: Price
+      width: 50
+  -
+    handle: brand
+    field:
+      input_type: text
+      type: text
+      localizable: false
+      width: 50
+      listable: hidden
+      display: Brand
+  -
+    handle: headline
+    field:
+      input_type: text
+      type: text
+      localizable: false
+      listable: hidden
+      display: Headline
+  -
+    handle: short_description
+    field:
+      type: textarea
+      localizable: false
+      listable: hidden
+      display: 'Short description'
+  -
+    handle: description
+    field:
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - image
+        - table
+      save_html: true
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      type: bard
+      localizable: false
+      listable: hidden
+      display: Description
+  -
+    handle: variants
+    field:
+      fields:
+        -
+          handle: variant
+          field:
+            input_type: text
+            type: text
+            localizable: false
+            listable: hidden
+            display: Variant
+        -
+          handle: options
+          field:
+            mode: table
+            reorderable: false
+            type: grid
+            localizable: false
+            listable: hidden
+            display: Options
+            fields:
+              -
+                handle: option
+                field:
+                  input_type: text
+                  type: text
+                  localizable: false
+                  listable: hidden
+                  display: Option
+              -
+                handle: add_amount
+                field:
+                  placeholder: '0.00'
+                  input_type: text
+                  prepend: $
+                  type: text
+                  localizable: false
+                  listable: hidden
+                  display: 'Add amount'
+            add_row: 'Add Option'
+            min_rows: 1
+      mode: stacked
+      reorderable: true
+      type: grid
+      localizable: false
+      listable: hidden
+      display: Variants
+      instructions: 'Offer variations of this product'
+      add_row: 'Add Variant'
+  -
+    handle: features
+    field:
+      mode: default
+      collections:
+        - examples
+      type: entries
+      localizable: false
+      listable: hidden
+      display: Features
+  -
+    handle: details
+    field:
+      fields:
+        -
+          handle: title
+          field:
+            input_type: text
+            type: text
+            localizable: false
+            listable: hidden
+            display: Title
+        -
+          handle: details
+          field:
+            buttons:
+              - h2
+              - h3
+              - bold
+              - italic
+              - unorderedlist
+              - orderedlist
+              - removeformat
+              - quote
+              - anchor
+              - image
+              - table
+            container: assets
+            save_html: true
+            toolbar_mode: fixed
+            link_noopener: false
+            link_noreferrer: false
+            target_blank: false
+            reading_time: false
+            fullscreen: false
+            allow_source: true
+            type: bard
+            localizable: false
+            listable: hidden
+            display: Details
+      mode: stacked
+      reorderable: true
+      type: grid
+      localizable: false
+      listable: hidden
+      display: Details
+      instructions: 'Add more details and technical specifications'
+      add_row: 'Add Details'
+  -
+    handle: questions
+    field:
+      fields:
+        -
+          handle: question
+          field:
+            input_type: text
+            type: text
+            localizable: false
+            listable: hidden
+            display: Question
+        -
+          handle: answer
+          field:
+            buttons:
+              - bold
+              - italic
+              - unorderedlist
+              - orderedlist
+              - removeformat
+              - anchor
+            save_html: true
+            toolbar_mode: floating
+            link_noopener: false
+            link_noreferrer: false
+            target_blank: false
+            reading_time: false
+            fullscreen: false
+            allow_source: false
+            type: bard
+            localizable: false
+            listable: hidden
+            display: Answer
+      mode: table
+      reorderable: true
+      type: grid
+      localizable: false
+      listable: hidden
+      display: Questions
+      add_row: 'Add Question'
+  -
+    handle: downloads
+    field:
+      mode: list
+      container: assets
+      restrict: false
+      allow_uploads: true
+      type: assets
+      localizable: false
+      listable: hidden
+      display: Downloads
+  -
+    handle: reviews
+    field:
+      mode: default
+      collections:
+        - examples
+      type: entries
+      localizable: false
+      listable: hidden
+      display: Reviews

@@ -1,7 +1,7 @@
 <main class="relative flex items-center justify-center max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
   <div class="w-full">
     <header>
-      <p class="lg:-mt-5 tracking-wider uppercase text-pop leading-5 lg:leading-6 text-sm lg:text-base">
+      <p class="lg:-mt-5 tracking-wider uppercase text-pop-dark leading-5 lg:leading-6 text-sm lg:text-base">
         {{ title }}
       </p>
       <h2 class="mt-2 lg:mt-3 max-w-3xl font-bold text-xl lg:text-2xl leading-6 lg:leading-8 text-white font-display">
@@ -9,12 +9,12 @@
       </h2>
     </header>
     <aside class="mt-10">
-      <div class="grid grid-cols-1 row-gap-8 sm:grid-cols-2 lg:grid-cols-3 sm:col-gap-10">
+      <div class="grid grid-cols-1 gap-x-8 sm:grid-cols-2 lg:grid-cols-3 sm:gap-y-10">
         {{ collection:fieldsets }}
-        <div class="group flex overflow-hidden flex-col bg-gray text-white text-opacity-75 rounded-md group block w-full transition duration-150 ease-in-out transform hover:-translate-y-1 hover:shadow-xl">
+        <div class="fs-color-{{ color.label }} group flex overflow-hidden flex-col bg-gray text-white text-opacity-75 rounded-md group block w-full transition duration-150 ease-in-out transform hover:-translate-y-1 hover:shadow-xl">
             <a href="{{ url }}" class="p-6 flex-1 flex items-start space-x-5">
-              <div class="flex w-12 h-12">
-                {{ svg :src="icon" class="text-{{ color.label }} group-hover:text-{{ color.label }}-light w-full" }}
+              <div class="flex w-12 h-12" test="icons/{{icon}}.svg">
+                {{ svg :src="icon" class="text-fs-dark group-hover:text-fs-light w-full" }}
               </div>
               <div class="flex-1">
                 <p class="w-full lg:flex lg:justify-between font-bold lg:items-center text-white leading-6 lg:leading-7 text-base lg:text-lg">

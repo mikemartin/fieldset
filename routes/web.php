@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FieldsetDevController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +16,3 @@ use App\Http\Controllers\FieldsetDevController;
 // Route::statamic('example', 'example-view', [
 //    'title' => 'Example'
 // ]);
-
-Route::get('fieldset-dev', [FieldsetDevController::class, 'index'])->name('statamic.cp.fieldset-dev.index');

@@ -13,16 +13,27 @@ sections:
       -
         handle: icon
         field:
-          mode: list
-          container: assets
-          folder: icons
-          restrict: false
-          allow_uploads: true
-          max_files: 1
-          type: assets
-          listable: hidden
+          options:
+            check-badge: check-badge
+            chef-gear-roller-whisk: chef-gear-roller-whisk
+            house-chimney: house-chimney
+            music-note: music-note
+            products-purse: products-purse
+            rating-star: rating-star
+            search: search
+            vinyl-record: vinyl-record
+          multiple: false
+          clearable: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
           display: Icon
+          type: select
+          icon: select
           width: 50
+          listable: hidden
+          instructions_position: above
       -
         handle: author
         field:
@@ -43,10 +54,18 @@ sections:
       -
         handle: description
         field:
-          input_type: text
-          type: text
-          listable: hidden
+          container: assets
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: true
+          antlers: false
           display: Description
+          type: markdown
+          icon: markdown
+          listable: hidden
+          instructions_position: above
       -
         handle: fieldset
         field:
@@ -56,16 +75,14 @@ sections:
       -
         handle: example
         field:
-          theme: material
-          mode: yaml
-          indent_type: tabs
-          indent_size: 4
-          key_map: default
-          line_numbers: true
-          line_wrapping: true
-          type: code
+          max_items: 1
+          mode: default
+          type: entries
+          localizable: false
           listable: hidden
-          display: 'Example Content'
+          display: Example
+          collections:
+            - examples
       -
         handle: downloads
         field:

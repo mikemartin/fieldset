@@ -29,7 +29,6 @@
         "postcss-preset-env": "^6.7.0",
         "tailwindcss": "^2.1.1",
         "vue-loader": "^15.9.8",
-        "vue-template-compiler": "^2.6.12",
         "vue": "^2.6.14"
     }
 }

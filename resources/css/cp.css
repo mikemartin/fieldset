@@ -1,15 +1,19 @@
 /* This is all you. */
 
 html .fieldset-card {
-  @apply overflow-hidden bg-light text-white text-opacity-75 rounded-md block w-full transition duration-150 ease-in-out transform;
+  @apply overflow-hidden bg-light text-white text-opacity-75 rounded-md block w-full transition duration-150 ease-in-out transform cursor-pointer;
 }
 
 html .media-object { 
   @apply p-6 flex-1 flex items-start space-x-5;
 }
 
+html .fieldset-color--pop { 
+  @apply text-pop-dark;
+}
+
 html .media-object--image { 
-  @apply flex w-12 h-12 text-pop-default;
+  @apply flex w-12 h-12 text-pop-dark;
 }
 
 html .fieldset-card-small-icon {

@@ -11,7 +11,8 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "rias/statamic-color-swatches": "^2.0",
-        "statamic/cms": "3.2.*"
+        "statamic/cms": "3.2.*",
+        "madeby/fieldset-dev": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
@@ -62,5 +63,11 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-    }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "addons/madeby/fieldset-dev"
+        }
+    ]
 }
