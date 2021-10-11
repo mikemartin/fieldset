@@ -13,11 +13,13 @@ class Fieldset extends Tags
     /**
      * {{ fieldset:* }} ... {{ /fieldset:* }}.
      */
-     public function __call($method, $args)
+     public function wildcard($tag)
      {
-         $from = Arr::get($this->context, $method)->raw();
-         $this->parameters['from'] = $from;
-         return $this->index();
+        if($tag !== "example") dd($tag);
+        $from = Arr::get($this->context, $tag)->raw();
+        $this->params['from'] = $from;
+        return $this->index();
+        
      }
 
     /**
@@ -27,11 +29,9 @@ class Fieldset extends Tags
      */
     public function index()
     {
-      $entry = $this->fetchEntry($this->get('from'));
+      $entry = $this->fetchEntry($this->params->get('from'));
       $blueprint = $this->fetchFields($entry);
-
       $fields = $this->mapFields($entry, $blueprint);
-
       return $fields->all();
     }
 

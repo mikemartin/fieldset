@@ -76,45 +76,17 @@ module.exports = {
           }
         },
       },
-      pop: {
+      "fs-dark": {
         'input, textarea, multiselect, select': {
           '&::placeholder': {
-            color: theme('colors.pop.dark'),
+            color: 'var(--fs-color-dark)',
           },
         },
       },
-      ultraviolet: {
+      "fs-light": {
         'input, textarea, multiselect, select': {
           '&::placeholder': {
-            color: theme('colors.ultraviolet.default'),
-          },
-        },
-      },
-      lightning: {
-        'input, textarea, multiselect, select': {
-          '&::placeholder': {
-            color: theme('colors.lightning.default'),
-          },
-        },
-      },
-      glowworm: {
-        'input, textarea, multiselect, select': {
-          '&::placeholder': {
-            color: theme('colors.glowworm.default'),
-          },
-        },
-      },
-      firefly: {
-        'input, textarea, multiselect, select': {
-          '&::placeholder': {
-            color: theme('colors.firefly.default'),
-          },
-        },
-      },
-      flame: {
-        'input, textarea, multiselect, select': {
-          '&::placeholder': {
-            color: theme('colors.flame.default'),
+            color: 'var(--fs-color-light)',
           },
         },
       },

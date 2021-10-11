@@ -729,6 +729,18 @@ video {
 	color: #FCEDFA;
 }
 
+.form-input-fs-dark::-moz-placeholder{
+	color: var(--fs-color-dark);
+}
+
+.form-input-fs-dark:-ms-input-placeholder{
+	color: var(--fs-color-dark);
+}
+
+.form-input-fs-dark::placeholder{
+	color: var(--fs-color-dark);
+}
+
 .sr-only{
 	position: absolute;
 	width: 1px;
@@ -1460,10 +1472,6 @@ video {
   --fs-color-light: #FF3D76;
 }
 
-body {
-  background: #CE30FF;
-}
-
 .hover\:-translate-y-px:hover{
 	--tw-translate-y: -1px;
 	transform: var(--tw-transform);
@@ -1481,6 +1489,10 @@ body {
 .hover\:text-white:hover{
 	--tw-text-opacity: 1;
 	color: rgba(252, 237, 250, var(--tw-text-opacity));
+}
+
+.hover\:text-fs-dark:hover{
+	color: var(--fs-color-dark);
 }
 
 .hover\:text-opacity-100:hover{
@@ -1520,6 +1532,11 @@ body {
 .focus\:outline-none:focus{
 	outline: 2px solid transparent;
 	outline-offset: 2px;
+}
+
+.group:hover .group-hover\:text-pop-light{
+	--tw-text-opacity: 1;
+	color: rgba(255, 90, 220, var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:text-black{
@@ -1712,3 +1729,4 @@ body {
 		opacity: 0.75;
 	}
 }
+
