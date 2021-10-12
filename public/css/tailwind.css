@@ -1482,6 +1482,14 @@ video {
 	transform: var(--tw-transform);
 }
 
+.hover\:border-fs-light:hover{
+	border-color: var(--fs-color-light);
+}
+
+.hover\:bg-fs-dark:hover{
+	background-color: var(--fs-color-dark);
+}
+
 .hover\:bg-opacity-75:hover{
 	--tw-bg-opacity: 0.75;
 }

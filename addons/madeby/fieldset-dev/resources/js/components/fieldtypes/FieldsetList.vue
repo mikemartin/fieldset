@@ -29,7 +29,8 @@
     <data-list :rows="rows" v-if="!initializing && !showingFieldset">
       <div class="" slot-scope="{ rows: fieldsets }">
         <div class="card p-0">
-          <div class="border-b px-2 text-sm">
+          <!-- Filtering was removed from v1 -->
+          <!-- <div class="border-b px-2 text-sm">
             <button
               class="data-list-filter-link"
               :class="{ active: filter === 'all' }"
@@ -44,7 +45,7 @@
               {{ __("Installed") }}
               <span class="badge" v-if="installCount">{{ installCount }}</span>
             </button>
-          </div>
+          </div> -->
 
           <div class="p-1">
             <data-list-search ref="search" v-model="searchQuery" />

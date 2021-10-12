@@ -2272,44 +2272,6 @@ var render = function() {
                       {},
                       [
                         _c("div", { staticClass: "card p-0" }, [
-                          _c("div", { staticClass: "border-b px-2 text-sm" }, [
-                            _c("button", {
-                              staticClass: "data-list-filter-link",
-                              class: { active: _vm.filter === "all" },
-                              domProps: { textContent: _vm._s(_vm.__("All")) },
-                              on: {
-                                click: function($event) {
-                                  _vm.filter = "all"
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass: "data-list-filter-link",
-                                class: { active: _vm.filter === "installed" },
-                                on: {
-                                  click: function($event) {
-                                    _vm.filter = "installed"
-                                  }
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "\n            " +
-                                    _vm._s(_vm.__("Installed")) +
-                                    "\n            "
-                                ),
-                                _vm.installCount
-                                  ? _c("span", { staticClass: "badge" }, [
-                                      _vm._v(_vm._s(_vm.installCount))
-                                    ])
-                                  : _vm._e()
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
                           _c(
                             "div",
                             { staticClass: "p-1" },
@@ -2548,7 +2510,7 @@ var render = function() {
               ],
               null,
               false,
-              650194615
+              3914070524
             )
           })
         : _vm._e(),
