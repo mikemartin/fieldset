@@ -18,4 +18,5 @@ color:
     - '#FF269E'
     - '#FF6BF0'
 fieldset: music_album
+downloads: 4
 ---

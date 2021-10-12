@@ -59,8 +59,6 @@ class FieldsetDevPublicAPIController extends BaseController
       ->map(function ($fieldset) {
         $handle = $fieldset->get("fieldset");
         $handle = str_replace('/', '.', $handle);
-        $path = str_replace('.', '/', $handle);
-        $directory = Fieldset::directory();  
         $color = $fieldset->get("color");
         $user = User::find($fieldset->get("author"));
         $fieldset->author = [
@@ -69,7 +67,6 @@ class FieldsetDevPublicAPIController extends BaseController
         ];
         $fieldset->permalink = $fieldset->absoluteUrl();
         $fieldset->color = $color["label"];
-        $fieldset->installed = (!File::exists($path = "{$directory}/{$path}.yaml"));
         return $fieldset->data();
       });
     

@@ -2,6 +2,7 @@
 
 namespace MadeBy\FieldsetDev\Http\Controllers;
 use Statamic\Http\Controllers\CP\CpController;
+use Statamic\Facades\Fieldset;
 
 class FieldsetDevController extends CpController
 {

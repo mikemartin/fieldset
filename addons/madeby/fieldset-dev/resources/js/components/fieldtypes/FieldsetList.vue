@@ -122,10 +122,10 @@
           </div>
         </div>
 
-        <data-list-pagination
+        <!-- <data-list-pagination
           :resource-meta="meta"
           @page-selected="setPage"
-        ></data-list-pagination>
+        ></data-list-pagination> -->
       </div>
     </data-list>
 
@@ -156,11 +156,6 @@ export default {
       showingFieldset: false,
       error: false,
       unlisted: [],
-      ///
-      loading: true,
-      options: [],
-      entry: null,
-      icon: null,
     };
   },
 
@@ -215,9 +210,6 @@ export default {
           this.initializing = false;
           this.rows = response.data.data;
           this.meta = response.data.meta;
-          // if (this.showingfieldset) {
-          //   this.refreshShowingfieldset();
-          // }
         })
         .catch((e) => {
           console.log(e);
@@ -226,22 +218,6 @@ export default {
           this.$toast.error(__("Something went wrong"));
         });
     },
-
-    // getOptions() {
-    //   fetch("/api/fieldsets").then((resp) => {
-    //     resp.json().then((options) => {
-    //       this.loading = false;
-    //       this.options = options.map((o) => {
-    //         const { handle, title, ...rest } = o;
-    //         return {
-    //         value: handle,
-    //         label: title,
-    //         ...rest
-    //       }});
-
-    //     });
-    //   });
-    // },
 
     showFieldset(fieldset) {
       this.showingFieldset = fieldset;

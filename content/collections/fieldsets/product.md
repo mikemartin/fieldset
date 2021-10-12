@@ -17,5 +17,5 @@ color:
     - '#CE30FF'
     - '#FB7EFF'
 fieldset: product
-downloads: 4
+downloads: 10
 ---

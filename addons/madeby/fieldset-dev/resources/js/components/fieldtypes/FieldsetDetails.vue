@@ -9,17 +9,22 @@
         v-text="__('Preview on fieldset.dev')"
       />
       <button
-        v-if="fieldset.installed"
+        v-if="loading"
         class="btn"
-        :disabled="processing"
-        v-text="__('You have already stolen this fieldset')"
+        v-text="__('Loading...')"
+      />
+      <button
+        v-else-if="installed"
+        class="btn"
+        v-text="__('Installed: View locally')"
+        @click="goTo"
       />
       <button
         v-else
         class="btn btn-primary"
         :disabled="processing"
         @click="install"
-        v-text="__('Steal this!')"
+        v-text="__('Import')"
       />
     </div>
     <div>
@@ -63,7 +68,10 @@ export default {
   props: ["fieldset"],
 
   data() {
-    return {};
+    return {
+      loading: true,      
+      installed: null      
+    };
   },
 
   computed: {
@@ -72,12 +80,36 @@ export default {
     },
   },
 
-  methods: {
-    install() {
+  created() {
+    this.isInstalled();
+  },
 
-      this.$axios
-        .get("/api/fieldsets/download/" + this.fieldset.fieldset)
+  methods: {
+    
+    isInstalled() {
+      return this.$axios
+        .get(`/cp/fieldset-dev/installed/${this.fieldset.fieldset}`)
         .then((response) => {
+          this.loading = false;
+          this.installed = response.data;
+        })
+        .catch((e) => {
+          console.log(e);
+          this.loading = false;
+          this.error = true;
+          this.$toast.error(__("Something went wrong"));
+        });
+    },
+
+    goTo() { 
+      window.location = cp_url(`fields/fieldsets/fsdev-${this.fieldset.fieldset}/edit`);
+    },
+
+    install() {
+      this.$axios
+        .get("/fieldset-dev/download/" + this.fieldset.fieldset)
+        .then(() => {
+          this.installed = true;
           this.$toast.success(__("Fieldset saved"));
         })
         .catch((e) => {

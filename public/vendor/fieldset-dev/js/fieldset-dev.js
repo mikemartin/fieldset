@@ -72,28 +72,58 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ["fieldset"],
   data: function data() {
-    return {};
+    return {
+      loading: true,
+      installed: null
+    };
   },
   computed: {
     description: function description() {
       return this.fieldset.subtitle;
     }
   },
+  created: function created() {
+    this.isInstalled();
+  },
   methods: {
-    install: function install() {
+    isInstalled: function isInstalled() {
       var _this = this;
 
-      this.$axios.get("/api/fieldsets/download/" + this.fieldset.fieldset).then(function (response) {
-        _this.$toast.success(__("Fieldset saved"));
+      return this.$axios.get("/cp/fieldset-dev/installed/".concat(this.fieldset.fieldset)).then(function (response) {
+        _this.loading = false;
+        _this.installed = response.data;
       })["catch"](function (e) {
         console.log(e);
         _this.loading = false;
         _this.error = true;
 
         _this.$toast.error(__("Something went wrong"));
+      });
+    },
+    goTo: function goTo() {
+      window.location = cp_url("fields/fieldsets/fsdev-".concat(this.fieldset.fieldset, "/edit"));
+    },
+    install: function install() {
+      var _this2 = this;
+
+      this.$axios.get("/fieldset-dev/download/" + this.fieldset.fieldset).then(function () {
+        _this2.installed = true;
+
+        _this2.$toast.success(__("Fieldset saved"));
+      })["catch"](function (e) {
+        console.log(e);
+        _this2.loading = false;
+        _this2.error = true;
+
+        _this2.$toast.error(__("Something went wrong"));
       });
     }
   }
@@ -266,8 +296,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
+//
 //
 //
 //
@@ -413,9 +442,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
-    var _ref;
-
-    return _ref = {
+    return {
       initializing: true,
       loading: true,
       rows: [],
@@ -426,7 +453,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       showingFieldset: false,
       error: false,
       unlisted: []
-    }, _defineProperty(_ref, "loading", true), _defineProperty(_ref, "options", []), _defineProperty(_ref, "entry", null), _defineProperty(_ref, "icon", null), _ref;
+    };
   },
   computed: {
     params: function params() {
@@ -473,9 +500,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this.loading = false;
         _this.initializing = false;
         _this.rows = response.data.data;
-        _this.meta = response.data.meta; // if (this.showingfieldset) {
-        //   this.refreshShowingfieldset();
-        // }
+        _this.meta = response.data.meta;
       })["catch"](function (e) {
         console.log(e);
         _this.loading = false;
@@ -484,20 +509,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this.$toast.error(__("Something went wrong"));
       });
     },
-    // getOptions() {
-    //   fetch("/api/fieldsets").then((resp) => {
-    //     resp.json().then((options) => {
-    //       this.loading = false;
-    //       this.options = options.map((o) => {
-    //         const { handle, title, ...rest } = o;
-    //         return {
-    //         value: handle,
-    //         label: title,
-    //         ...rest
-    //       }});
-    //     });
-    //   });
-    // },
     showFieldset: function showFieldset(fieldset) {
       this.showingFieldset = fieldset;
       window.scrollTo(0, 0);
@@ -1944,20 +1955,23 @@ var render = function() {
         domProps: { textContent: _vm._s(_vm.__("Preview on fieldset.dev")) }
       }),
       _vm._v(" "),
-      _vm.fieldset.installed
+      _vm.loading
         ? _c("button", {
             staticClass: "btn",
-            attrs: { disabled: _vm.processing },
+            domProps: { textContent: _vm._s(_vm.__("Loading...")) }
+          })
+        : _vm.installed
+        ? _c("button", {
+            staticClass: "btn",
             domProps: {
-              textContent: _vm._s(
-                _vm.__("You have already stolen this fieldset")
-              )
-            }
+              textContent: _vm._s(_vm.__("Installed: View locally"))
+            },
+            on: { click: _vm.goTo }
           })
         : _c("button", {
             staticClass: "btn btn-primary",
             attrs: { disabled: _vm.processing },
-            domProps: { textContent: _vm._s(_vm.__("Steal this!")) },
+            domProps: { textContent: _vm._s(_vm.__("Import")) },
             on: { click: _vm.install }
           })
     ]),
@@ -2267,250 +2281,230 @@ var render = function() {
                   key: "default",
                   fn: function(ref) {
                     var fieldsets = ref.rows
-                    return _c(
-                      "div",
-                      {},
-                      [
-                        _c("div", { staticClass: "card p-0" }, [
-                          _c(
-                            "div",
-                            { staticClass: "p-1" },
-                            [
-                              _c("data-list-search", {
-                                ref: "search",
-                                model: {
-                                  value: _vm.searchQuery,
-                                  callback: function($$v) {
-                                    _vm.searchQuery = $$v
-                                  },
-                                  expression: "searchQuery"
-                                }
-                              })
-                            ],
-                            1
-                          )
-                        ]),
-                        _vm._v(" "),
+                    return _c("div", {}, [
+                      _c("div", { staticClass: "card p-0" }, [
                         _c(
                           "div",
-                          {
-                            staticClass: "fieldset-grid my-4",
-                            class: { "opacity-50": _vm.loading }
-                          },
-                          _vm._l(fieldsets, function(fieldset) {
-                            return _c(
-                              "div",
-                              {
-                                key: fieldset.id,
-                                staticClass: "fieldset-card",
-                                on: {
-                                  click: function($event) {
-                                    return _vm.showFieldset(fieldset)
-                                  }
+                          { staticClass: "p-1" },
+                          [
+                            _c("data-list-search", {
+                              ref: "search",
+                              model: {
+                                value: _vm.searchQuery,
+                                callback: function($$v) {
+                                  _vm.searchQuery = $$v
+                                },
+                                expression: "searchQuery"
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "fieldset-grid my-4",
+                          class: { "opacity-50": _vm.loading }
+                        },
+                        _vm._l(fieldsets, function(fieldset) {
+                          return _c(
+                            "div",
+                            {
+                              key: fieldset.id,
+                              staticClass: "fieldset-card",
+                              on: {
+                                click: function($event) {
+                                  return _vm.showFieldset(fieldset)
                                 }
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  {
-                                    class:
-                                      "media-object fs-color-" + fieldset.color
-                                  },
-                                  [
+                              }
+                            },
+                            [
+                              _c(
+                                "div",
+                                {
+                                  class:
+                                    "media-object fs-color-" + fieldset.color
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "media-object--image" },
+                                    [
+                                      _c("fiedlset-dev-icon", {
+                                        attrs: { name: fieldset.icon }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "flex-1" }, [
                                     _c(
-                                      "div",
-                                      { staticClass: "media-object--image" },
+                                      "p",
+                                      { staticClass: "fieldset-card--title" },
                                       [
-                                        _c("fiedlset-dev-icon", {
-                                          attrs: { name: fieldset.icon }
-                                        })
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "flex-1" }, [
-                                      _c(
-                                        "p",
-                                        { staticClass: "fieldset-card--title" },
-                                        [
-                                          _vm._v(
-                                            "\n                " +
-                                              _vm._s(fieldset.title) +
-                                              "\n              "
-                                          )
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "p",
-                                        {
-                                          staticClass: "fieldset-card--subtitle"
-                                        },
-                                        [
-                                          _vm._v(
-                                            "\n                " +
-                                              _vm._s(fieldset.subtitle) +
-                                              "\n              "
-                                          )
-                                        ]
-                                      )
-                                    ])
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "fieldset-card--footer" },
-                                  [
-                                    _c(
-                                      "div",
-                                      { staticClass: "flex items-center" },
-                                      [
-                                        _c(
-                                          "div",
-                                          { staticClass: "flex-shrink-0" },
-                                          [
-                                            _c("img", {
-                                              staticClass:
-                                                "h-6 w-6 rounded-full",
-                                              attrs: {
-                                                src: fieldset.author.avatar,
-                                                alt: fieldset.author.name
-                                              }
-                                            })
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c("div", { staticClass: "ml-2" }, [
-                                          _c(
-                                            "p",
-                                            { staticClass: "author-name" },
-                                            [
-                                              _vm._v(
-                                                "\n                  " +
-                                                  _vm._s(fieldset.author.name) +
-                                                  "\n                "
-                                              )
-                                            ]
-                                          )
-                                        ])
+                                        _vm._v(
+                                          "\n                " +
+                                            _vm._s(fieldset.title) +
+                                            "\n              "
+                                        )
                                       ]
                                     ),
                                     _vm._v(" "),
-                                    fieldset.downloads
-                                      ? _c(
-                                          "div",
-                                          {
-                                            staticClass:
-                                              "ml-2 flex items-baseline text-sm leading-5"
-                                          },
+                                    _c(
+                                      "p",
+                                      {
+                                        staticClass: "fieldset-card--subtitle"
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                " +
+                                            _vm._s(fieldset.subtitle) +
+                                            "\n              "
+                                        )
+                                      ]
+                                    )
+                                  ])
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "fieldset-card--footer" },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "flex items-center" },
+                                    [
+                                      _c(
+                                        "div",
+                                        { staticClass: "flex-shrink-0" },
+                                        [
+                                          _c("img", {
+                                            staticClass: "h-6 w-6 rounded-full",
+                                            attrs: {
+                                              src: fieldset.author.avatar,
+                                              alt: fieldset.author.name
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "ml-2" }, [
+                                        _c(
+                                          "p",
+                                          { staticClass: "author-name" },
                                           [
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass:
-                                                  "self-center flex-shrink-0 inline-block text-opacity-75 hover:text-opacity-100"
-                                              },
-                                              [
-                                                _c(
-                                                  "svg",
-                                                  {
-                                                    staticClass:
-                                                      "h-5 w-5 text-current fieldset-color--pop",
-                                                    attrs: {
-                                                      fill: "currentColor",
-                                                      height: "21",
-                                                      viewBox: "0 0 21 21",
-                                                      width: "21",
-                                                      xmlns:
-                                                        "http://www.w3.org/2000/svg"
-                                                    }
-                                                  },
-                                                  [
-                                                    _c(
-                                                      "g",
-                                                      {
-                                                        attrs: {
-                                                          fill: "none",
-                                                          "fill-rule":
-                                                            "evenodd",
-                                                          stroke:
-                                                            "currentColor",
-                                                          "stroke-linecap":
-                                                            "round",
-                                                          "stroke-linejoin":
-                                                            "round",
-                                                          transform:
-                                                            "translate(3 3)"
-                                                        }
-                                                      },
-                                                      [
-                                                        _c("path", {
-                                                          attrs: {
-                                                            d:
-                                                              "m11.5 8.5-3.978 4-4.022-4"
-                                                          }
-                                                        }),
-                                                        _vm._v(" "),
-                                                        _c("path", {
-                                                          attrs: {
-                                                            d:
-                                                              "m7.522.521v11.979"
-                                                          }
-                                                        }),
-                                                        _vm._v(" "),
-                                                        _c("path", {
-                                                          attrs: {
-                                                            d:
-                                                              "m.5 9v4.5c0 1.1045695.8954305 2 2 2h10c1.1045695 0 2-.8954305 2-2v-4.5"
-                                                          }
-                                                        })
-                                                      ]
-                                                    )
-                                                  ]
-                                                )
-                                              ]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "span",
-                                              { staticClass: "sr-only" },
-                                              [_vm._v("Downloads")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "span",
-                                              { staticClass: "ml-1" },
-                                              [
-                                                _vm._v(
-                                                  _vm._s(fieldset.downloads)
-                                                )
-                                              ]
+                                            _vm._v(
+                                              "\n                  " +
+                                                _vm._s(fieldset.author.name) +
+                                                "\n                "
                                             )
                                           ]
                                         )
-                                      : _vm._e()
-                                  ]
-                                )
-                              ]
-                            )
-                          }),
-                          0
-                        ),
-                        _vm._v(" "),
-                        _c("data-list-pagination", {
-                          attrs: { "resource-meta": _vm.meta },
-                          on: { "page-selected": _vm.setPage }
-                        })
-                      ],
-                      1
-                    )
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  fieldset.downloads
+                                    ? _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "ml-2 flex items-baseline text-sm leading-5"
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass:
+                                                "self-center flex-shrink-0 inline-block text-opacity-75 hover:text-opacity-100"
+                                            },
+                                            [
+                                              _c(
+                                                "svg",
+                                                {
+                                                  staticClass:
+                                                    "h-5 w-5 text-current fieldset-color--pop",
+                                                  attrs: {
+                                                    fill: "currentColor",
+                                                    height: "21",
+                                                    viewBox: "0 0 21 21",
+                                                    width: "21",
+                                                    xmlns:
+                                                      "http://www.w3.org/2000/svg"
+                                                  }
+                                                },
+                                                [
+                                                  _c(
+                                                    "g",
+                                                    {
+                                                      attrs: {
+                                                        fill: "none",
+                                                        "fill-rule": "evenodd",
+                                                        stroke: "currentColor",
+                                                        "stroke-linecap":
+                                                          "round",
+                                                        "stroke-linejoin":
+                                                          "round",
+                                                        transform:
+                                                          "translate(3 3)"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c("path", {
+                                                        attrs: {
+                                                          d:
+                                                            "m11.5 8.5-3.978 4-4.022-4"
+                                                        }
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c("path", {
+                                                        attrs: {
+                                                          d: "m7.522.521v11.979"
+                                                        }
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c("path", {
+                                                        attrs: {
+                                                          d:
+                                                            "m.5 9v4.5c0 1.1045695.8954305 2 2 2h10c1.1045695 0 2-.8954305 2-2v-4.5"
+                                                        }
+                                                      })
+                                                    ]
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "span",
+                                            { staticClass: "sr-only" },
+                                            [_vm._v("Downloads")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("span", { staticClass: "ml-1" }, [
+                                            _vm._v(_vm._s(fieldset.downloads))
+                                          ])
+                                        ]
+                                      )
+                                    : _vm._e()
+                                ]
+                              )
+                            ]
+                          )
+                        }),
+                        0
+                      )
+                    ])
                   }
                 }
               ],
               null,
               false,
-              3914070524
+              1518650956
             )
           })
         : _vm._e(),

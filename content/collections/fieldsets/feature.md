@@ -17,5 +17,5 @@ color:
     - '#1DCFED'
     - '#66FAFE'
 fieldset: feature
-downloads: 1
+downloads: 8
 ---
