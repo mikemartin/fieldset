@@ -1,0 +1,7 @@
+title: 'Video'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        import: video

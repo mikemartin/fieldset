@@ -1,0 +1,7 @@
+title: 'SEO'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        import: seo_meta

@@ -1,0 +1,7 @@
+title: 'News Article'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        import: news_article

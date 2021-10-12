@@ -1,0 +1,7 @@
+title: 'Podcast'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        import: podcast

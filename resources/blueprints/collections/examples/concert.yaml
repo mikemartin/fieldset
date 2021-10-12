@@ -1,0 +1,7 @@
+title: 'Concert'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        import: concert
