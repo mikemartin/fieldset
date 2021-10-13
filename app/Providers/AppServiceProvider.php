@@ -3,9 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Fieldtypes\DynamicFieldGroup;
+use App\Fieldtypes\FieldsetSelector;
 use Statamic\Statamic;
-use Statamic\Facades\CP\Nav;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-      DynamicFieldGroup::register();
+      FieldsetSelector::register();
       Statamic::script('app', 'cp');
       Statamic::style('app', 'cp');
     }

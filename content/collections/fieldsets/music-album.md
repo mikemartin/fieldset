@@ -11,7 +11,7 @@ updated_at: 1633843535
 template: fieldset/show
 example: 62a05c4e-2882-4823-b415-f0237106cda7
 author: ac214142-16d4-46fb-8870-576ca392afb2
-icon: vinyl-record
+icon: icons/vinyl-record.svg
 color:
   label: pop
   value:

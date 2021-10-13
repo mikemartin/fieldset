@@ -4,12 +4,14 @@ namespace MadeBy\FieldsetDev;
 
 use Statamic\Providers\AddonServiceProvider;
 use MadeBy\FieldsetDev\Fieldtypes\FieldsetGroupFieldtype;
+use MadeBy\FieldsetDev\Fieldtypes\FieldsetGroupConfig;
 use Statamic\Facades\CP\Nav;
 
 class ServiceProvider extends AddonServiceProvider
 {
     protected $fieldtypes = [
       FieldsetGroupFieldtype::class,
+      FieldsetGroupConfig::class,
     ];
 
     protected $routes = [

@@ -60,13 +60,25 @@ class FieldsetDevPublicAPIController extends BaseController
         $handle = $fieldset->get("fieldset");
         $handle = str_replace('/', '.', $handle);
         $color = $fieldset->get("color");
+        $fieldset->color = "lightning"; 
+        if($color) {
+          $fieldset->color = $color["label"];
+        }
+
         $user = User::find($fieldset->get("author"));
-        $fieldset->author = [
-          "name" => $user->get("name"),
-          "avatar" => $user->avatar()
-        ];
+        if($user) {
+          $fieldset->author = [
+            "name" => $user->get("name"),
+            "avatar" => $user->avatar()
+          ];
+        } else {
+          $fieldset->author = [
+            "name" => "Default",
+            "avatar" => null
+          ];
+        }
+        $fieldset->icon = str_replace('.svg', '', str_replace('icons/', '', $fieldset->get("icon")));
         $fieldset->permalink = $fieldset->absoluteUrl();
-        $fieldset->color = $color["label"];
         return $fieldset->data();
       });
     

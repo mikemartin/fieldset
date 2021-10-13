@@ -13,24 +13,17 @@ sections:
       -
         handle: icon
         field:
-          options:
-            check-badge: check-badge
-            chef-gear-roller-whisk: chef-gear-roller-whisk
-            house-chimney: house-chimney
-            music-note: music-note
-            products-purse: products-purse
-            rating-star: rating-star
-            search: search
-            vinyl-record: vinyl-record
-          multiple: false
-          clearable: false
-          searchable: true
-          taggable: false
-          push_tags: false
-          cast_booleans: false
+          mode: list
+          container: assets
+          folder: icons
+          restrict: true
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
           display: Icon
-          type: select
-          icon: select
+          type: assets
+          icon: assets
+          instructions: 'SVG icon'
           width: 50
           listable: hidden
           instructions_position: above
@@ -69,7 +62,7 @@ sections:
       -
         handle: fieldset
         field:
-          type: dynamic_field_group
+          type: fieldset_selector
           listable: hidden
           display: Fieldset
       -
@@ -78,7 +71,6 @@ sections:
           max_items: 1
           mode: default
           type: entries
-          localizable: false
           listable: hidden
           display: Example
           collections:

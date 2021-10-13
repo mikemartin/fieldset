@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -74,18 +74,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 /***/ }),
 
-/***/ "./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue":
-/*!***************************************************************************!*\
-  !*** ./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue ***!
-  \***************************************************************************/
+/***/ "./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue ***!
+  \**************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _DynamicFieldGroupFieldtype_vue_vue_type_template_id_9c62d4f6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DynamicFieldGroupFieldtype.vue?vue&type=template&id=9c62d4f6& */ "./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue?vue&type=template&id=9c62d4f6&");
-/* harmony import */ var _DynamicFieldGroupFieldtype_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DynamicFieldGroupFieldtype.vue?vue&type=script&lang=js& */ "./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue?vue&type=script&lang=js&");
+/* harmony import */ var _FieldsetSelectorFieldtype_vue_vue_type_template_id_007363a8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FieldsetSelectorFieldtype.vue?vue&type=template&id=007363a8& */ "./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue?vue&type=template&id=007363a8&");
+/* harmony import */ var _FieldsetSelectorFieldtype_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FieldsetSelectorFieldtype.vue?vue&type=script&lang=js& */ "./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue?vue&type=script&lang=js&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -95,9 +95,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 ;
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DynamicFieldGroupFieldtype_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DynamicFieldGroupFieldtype_vue_vue_type_template_id_9c62d4f6___WEBPACK_IMPORTED_MODULE_0__.render,
-  _DynamicFieldGroupFieldtype_vue_vue_type_template_id_9c62d4f6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _FieldsetSelectorFieldtype_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FieldsetSelectorFieldtype_vue_vue_type_template_id_007363a8___WEBPACK_IMPORTED_MODULE_0__.render,
+  _FieldsetSelectorFieldtype_vue_vue_type_template_id_007363a8___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
   null,
@@ -107,46 +107,46 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue"
+component.options.__file = "resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************!*\
-  !*** ./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************/
+/***/ "./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DynamicFieldGroupFieldtype_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DynamicFieldGroupFieldtype.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DynamicFieldGroupFieldtype_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FieldsetSelectorFieldtype_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FieldsetSelectorFieldtype.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FieldsetSelectorFieldtype_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue?vue&type=template&id=9c62d4f6&":
-/*!**********************************************************************************************************!*\
-  !*** ./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue?vue&type=template&id=9c62d4f6& ***!
-  \**********************************************************************************************************/
+/***/ "./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue?vue&type=template&id=007363a8&":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue?vue&type=template&id=007363a8& ***!
+  \*********************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DynamicFieldGroupFieldtype_vue_vue_type_template_id_9c62d4f6___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DynamicFieldGroupFieldtype_vue_vue_type_template_id_9c62d4f6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FieldsetSelectorFieldtype_vue_vue_type_template_id_007363a8___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FieldsetSelectorFieldtype_vue_vue_type_template_id_007363a8___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DynamicFieldGroupFieldtype_vue_vue_type_template_id_9c62d4f6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./DynamicFieldGroupFieldtype.vue?vue&type=template&id=9c62d4f6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue?vue&type=template&id=9c62d4f6&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FieldsetSelectorFieldtype_vue_vue_type_template_id_007363a8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FieldsetSelectorFieldtype.vue?vue&type=template&id=007363a8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue?vue&type=template&id=007363a8&");
 
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue?vue&type=template&id=9c62d4f6&":
-/*!*************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue?vue&type=template&id=9c62d4f6& ***!
-  \*************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue?vue&type=template&id=007363a8&":
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue?vue&type=template&id=007363a8& ***!
+  \************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -383,14 +383,14 @@ var __webpack_exports__ = {};
   !*** ./resources/js/cp.js ***!
   \****************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_fieldtypes_DynamicFieldGroupFieldtype_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/fieldtypes/DynamicFieldGroupFieldtype.vue */ "./resources/js/components/fieldtypes/DynamicFieldGroupFieldtype.vue");
+/* harmony import */ var _components_fieldtypes_FieldsetSelectorFieldtype_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/fieldtypes/FieldsetSelectorFieldtype.vue */ "./resources/js/components/fieldtypes/FieldsetSelectorFieldtype.vue");
 /**
  * When extending the control panel, be sure to uncomment the necessary code for your build process:
  * https://statamic.dev/extending/control-panel
  */
 
 Statamic.booting(function () {
-  Statamic.$components.register('dynamic_field_group-fieldtype', _components_fieldtypes_DynamicFieldGroupFieldtype_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
+  Statamic.$components.register('fieldset_selector-fieldtype', _components_fieldtypes_FieldsetSelectorFieldtype_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
 });
 })();
 

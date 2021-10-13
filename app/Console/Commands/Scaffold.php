@@ -18,7 +18,7 @@ class Scaffold extends Command
     *
     * @var string
     */
-    protected $name = 'fs:scaffold';
+    protected $name = 'madeby:scaffold';
 
      /**
      * The console command description.

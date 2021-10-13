@@ -6,6 +6,7 @@ use Statamic\Fields\Fieldtype;
 
 class FieldsetGroupFieldtype extends Fieldtype
 {
+    public static $handle = 'fieldset_group';
     public $icon = "section";
     protected $defaultValue = [];
 
@@ -16,7 +17,7 @@ class FieldsetGroupFieldtype extends Fieldtype
                 'display' => __('Select a fieldset'),
                 'required' => true,
                 'instructions' => __("Changes to this fieldset will stay in sync AND values will be nested under the current handle."),
-                'type' => 'fieldgroup_config',
+                'type' => 'fieldset_group_config',
             ],
             'show_label' => [
                 'display' => __('Show Label'),

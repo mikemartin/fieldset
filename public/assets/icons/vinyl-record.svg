@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <title>vinyl-record</title>
+  <circle fill="none" stroke="currentColor" cx="12" cy="12" r="11.5"/>
+  <circle fill="none" stroke="currentColor" cx="12" cy="12" r="2.5"/>
+  <path fill="none" stroke="currentColor" d="M20.877,10.58a9,9,0,0,0-7.193-7.417"/>
+  <path fill="none" stroke="currentColor" d="M18.9,10.9A7,7,0,0,0,13.31,5.127"/>
+  <path fill="none" stroke="currentColor" d="M16.932,11.211a5,5,0,0,0-4-4.12"/>
+  <path fill="none" stroke="currentColor" d="M3.123,13.42a9,9,0,0,0,7.193,7.417"/>
+  <path fill="none" stroke="currentColor" d="M5.1,13.1a7,7,0,0,0,5.594,5.769"/>
+  <path fill="none" stroke="currentColor" d="M7.068,12.789a5,5,0,0,0,4,4.121"/>
+  <path fill="none" stroke="currentColor" d="M12,11.752a.25.25,0,1,1-.25.25.25.25,0,0,1,.25-.25"/>
+</svg>

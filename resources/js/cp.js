@@ -3,9 +3,9 @@
  * https://statamic.dev/extending/control-panel
  */
 
- import DynamicFieldGroupFieldtype from './components/fieldtypes/DynamicFieldGroupFieldtype.vue';
+import FieldsetSelectorFieldtype from './components/fieldtypes/FieldsetSelectorFieldtype.vue';
 
- Statamic.booting(() => {
-     Statamic.$components.register('dynamic_field_group-fieldtype', DynamicFieldGroupFieldtype);
-    });
+Statamic.booting(() => {
+  Statamic.$components.register('fieldset_selector-fieldtype', FieldsetSelectorFieldtype);
+});
  

@@ -8,7 +8,7 @@ social_image: site
 updated_by: ac214142-16d4-46fb-8870-576ca392afb2
 updated_at: 1590832761
 author: ac214142-16d4-46fb-8870-576ca392afb2
-icon: chef-gear-roller-whisk
+icon: icons/chef-gear-roller-whisk.svg
 color:
   label: flame
   value:
