@@ -1,0 +1,25 @@
+{
+    "name": "madeby/fieldset-dev",
+    "type": "statamic-addon",
+    "autoload": {
+        "psr-4": {
+            "MadeBy\\FieldsetDev\\": "src"
+        }
+    },
+    "require":  {
+        "statamic/cms": "^3.0",
+        "pixelfear/composer-dist-plugin": "^0.1.0"
+    },
+    
+    "extra": {
+      "statamic": {
+          "name": "Fieldset Dev",
+          "description": "Community created fieldsets and for Statamic"
+      },
+      "laravel": {
+          "providers": [
+              "MadeBy\\FieldsetDev\\ServiceProvider"
+          ]
+      }
+  }
+}

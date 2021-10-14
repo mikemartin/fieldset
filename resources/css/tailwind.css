@@ -7,3 +7,30 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+
+.fs-color-pop {
+  --fs-color-dark: #FF269E;
+  --fs-color-light: #FF5ADC;
+}
+.fs-color-ultraviolet {
+  --fs-color-dark: #CE30FF;
+  --fs-color-light: #FB7EFF;
+}
+.fs-color-lightning {
+  --fs-color-dark: #1DCFED;
+  --fs-color-light: #66FAFE;
+}
+.fs-color-glowworm {
+  --fs-color-dark: #28F07E;
+  --fs-color-light: #6DFABE;
+}
+.fs-color-firefly {
+  --fs-color-dark: #FDF50C;
+  --fs-color-light: #FFFE7E;
+}
+
+.fs-color-flame {
+  --fs-color-dark: #FB024C;
+  --fs-color-light: #FF3D76;
+}

@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FieldsetDevPublicAPIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+Route::get('/fieldsets', [FieldsetDevPublicAPIController::class, 'list']);
+Route::get('/fieldsets/{handle}', [FieldsetDevPublicAPIController::class, 'show']);
+
+// This route is just pinged to count a download. Otherwise it's identical to /fieldsets/{handle}
+// Separated so we can use /fieldsets/{handle} to get the preview YAML without counting a download 
+Route::get('/fieldsets/download/{handle}', [FieldsetDevPublicAPIController::class, 'download']);
+
+
+

@@ -1,2 +1,95 @@
 title: 'Blog Post'
-fields: {  }
+fields:
+  -
+    handle: images
+    field:
+      mode: grid
+      container: assets
+      restrict: false
+      allow_uploads: true
+      max_files: 4
+      type: assets
+      localizable: false
+      listable: hidden
+      display: Images
+  -
+    handle: headline
+    field:
+      input_type: text
+      type: text
+      localizable: false
+      listable: hidden
+      display: Headline
+  -
+    handle: description
+    field:
+      buttons:
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+      save_html: true
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      type: bard
+      localizable: false
+      listable: hidden
+      display: Description
+  -
+    handle: body
+    field:
+      display: Body
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - image
+        - table
+      save_html: true
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      type: bard
+      localizable: false
+      listable: hidden
+  -
+    handle: author
+    field:
+      max_items: 1
+      mode: default
+      type: users
+      listable: hidden
+      display: Author
+      width: 50
+  -
+    handle: publish_date
+    field:
+      mode: single
+      time_enabled: false
+      time_required: false
+      earliest_date: '1900-01-01'
+      full_width: false
+      inline: false
+      columns: 1
+      rows: 1
+      type: date
+      localizable: false
+      width: 50
+      listable: hidden
+      display: 'Publish date'

@@ -25,7 +25,7 @@ return [
                 'users' => base_path('users'),
                 'roles' => resource_path('users/roles.yaml'),
                 'groups' => resource_path('users/groups.yaml'),
-            ]
+            ],
         ],
 
         'eloquent' => [
@@ -46,7 +46,7 @@ return [
     |
     */
 
-    'avatars' => 'initials',
+    'avatars' => 'gravatar',
 
     /*
     |--------------------------------------------------------------------------
@@ -60,6 +60,49 @@ return [
 
     'new_user_roles' => [
         //
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Password Brokers
+    |--------------------------------------------------------------------------
+    |
+    | When resetting passwords, Statamic uses an appropriate password broker.
+    | Here you may define which broker should be used for each situation.
+    | You may want a longer expiry for user activations, for example.
+    |
+    */
+
+    'passwords' => [
+        'resets' => 'resets',
+        'activations' => 'activations',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | DB Connection
+    |--------------------------------------------------------------------------
+    |
+    | Default database connection.
+    |
+    */
+
+    'database' => config('database.default'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Authentication Guards
+    |--------------------------------------------------------------------------
+    |
+    | By default, Statamic will use the `web` authentication guard. However,
+    | if you want to run Statamic alongside the default Laravel auth
+    | guard, you can configure that for your cp and/or frontend.
+    |
+    */
+
+    'guards' => [
+        'cp' => 'web',
+        'web' => 'web',
     ],
 
 ];

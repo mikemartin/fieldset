@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Fieldtypes\FieldsetSelector;
 use Statamic\Statamic;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,7 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Statamic::script('app', 'cp');
-        // Statamic::style('app', 'cp');
+      FieldsetSelector::register();
+      Statamic::script('app', 'cp');
+      Statamic::style('app', 'cp');
     }
+
+    
 }

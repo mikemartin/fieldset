@@ -1,0 +1,7 @@
+title: 'Invoice'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        import: invoice

@@ -1,0 +1,7 @@
+title: 'Estimate'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        import: estimate

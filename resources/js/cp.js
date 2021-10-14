@@ -3,12 +3,9 @@
  * https://statamic.dev/extending/control-panel
  */
 
-/** Example Fieldtype
-
-import ExampleFieldtype from './components/fieldtypes/ExampleFieldtype.vue';
+import FieldsetSelectorFieldtype from './components/fieldtypes/FieldsetSelectorFieldtype.vue';
 
 Statamic.booting(() => {
-    Statamic.$components.register('example-fieldtype', ExampleFieldtype);
+  Statamic.$components.register('fieldset_selector-fieldtype', FieldsetSelectorFieldtype);
 });
-
-*/
+ 

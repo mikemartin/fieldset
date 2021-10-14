@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'strategy' => null,
+    'strategy' => env('STATAMIC_STATIC_CACHING_STRATEGY', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you may define all of the static caching strategies for your
-    | application as well as their drivers. 
+    | application as well as their drivers.
     |
     | Supported drivers: "application", "file"
     |
@@ -36,7 +36,7 @@ return [
         'full' => [
             'driver' => 'file',
             'path' => public_path('static'),
-            'lock_hold_length' => 0
+            'lock_hold_length' => 0,
         ],
 
     ],
@@ -46,8 +46,8 @@ return [
     | Exclusions
     |--------------------------------------------------------------------------
     |
-    | Here you may define a list of URLs to be excluded from static 
-    | caching. You may want to exclude URLs containing dynamic 
+    | Here you may define a list of URLs to be excluded from static
+    | caching. You may want to exclude URLs containing dynamic
     | elements like contact forms, or shopping carts.
     |
     */
@@ -65,7 +65,7 @@ return [
     | flushed from the static cache. See the documentation for more details.
     | If a custom class is not defined, the default invalidator is used.
     |
-    | https://docs.statamic.com/static-caching
+    | https://statamic.dev/static-caching
     |
     */
 
@@ -75,8 +75,21 @@ return [
 
         'rules' => [
             //
-        ]
+        ],
 
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Ignoring Query Strings
+    |--------------------------------------------------------------------------
+    |
+    | Statamic will cache pages of the same URL but with different query
+    | parameters separately. This is useful for pages with pagination.
+    | If you'd like to ignore the query strings, you may do so.
+    |
+    */
+
+    'ignore_query_strings' => false,
 
 ];

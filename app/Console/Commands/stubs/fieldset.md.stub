@@ -1,0 +1,7 @@
+---
+id: fieldset-{{ id }}
+title: '{{ title }}'
+example: example-{{ example_id }}
+fieldset: {{ fieldset }}
+blueprint: fieldsets
+---

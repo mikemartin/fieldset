@@ -15,4 +15,5 @@ color:
     - '#FF269E'
     - '#FF6BF0'
 id: f5c7244e-05ae-4a81-aeea-5defec18dd3e
+fieldset: real-estate-property
 ---

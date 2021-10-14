@@ -1,12 +1,12 @@
 <div class="{{ partial:fields/width }} flex flex-col">
-  <label for="{{ handle }}" class="block text-base uppercase tracking-wide leading-8 text-{{ color.label }}">{{ display }}</label>
+  <label for="{{ handle }}" class="block text-base uppercase tracking-wide leading-8 text-fs-dark">{{ display }}</label>
   <div class="align-middle inline-block min-w-full rounded-md border border-light bg-gray overflow-hidden">
     <table class="min-w-full table-fixed">
       <thead>
         <tr>
           <th class="w-5 py-3 border-b border-black"></th>
           {{ fields }}
-          <th class="px-3 py-3 border-b border-black text-left text-xs leading-4 text-{{ color.label }} uppercase tracking-wider">
+          <th class="px-3 py-3 border-b border-black text-left text-xs leading-4 text-fs-dark uppercase tracking-wider">
             {{ field:display }}
           </th>
           {{ /fields }}
@@ -16,13 +16,13 @@
         {{ value }}
         <tr>
           <td class="text-center py-4 border-r border-black">
-            {{ svg:drag-dots class="inline-block h-5 w-5 text-{{ color.label }} fill-current stroke-current" }}
+            {{ svg:drag-dots class="inline-block h-5 w-5 text-fs-dark fill-current stroke-current" }}
           </td>
-          <td class="px-3 py-4 whitespace-no-wrap text-sm leading-5 text-{{ color.label }}">
-            <input readonly placeholder="{{ placeholder }}" type="{{ input_type ?? 'text' }}" name="{{ handle }}" value="{{ role }}" class="form-input form-input-{{ color.label }} bg-black lg:text-base w-full transition duration-150 ease-in-out" />
+          <td class="px-3 py-4 whitespace-no-wrap text-sm leading-5 text-fs-dark">
+            <input readonly placeholder="{{ placeholder }}" type="{{ input_type ?? 'text' }}" name="{{ handle }}" value="{{ role }}" class="form-input form-input-fs-dark bg-black lg:text-base w-full transition duration-150 ease-in-out" />
           </td>
-          <td class="px-3 py-4 whitespace-no-wrap text-sm leading-5 text-{{ color.label }}">
-            <input readonly placeholder="{{ placeholder }}" type="{{ input_type ?? 'text' }}" name="{{ handle }}" value="{{ name }}" class="form-input form-input-{{ color.label }} bg-black lg:text-base w-full transition duration-150 ease-in-out" />
+          <td class="px-3 py-4 whitespace-no-wrap text-sm leading-5 text-fs-dark">
+            <input readonly placeholder="{{ placeholder }}" type="{{ input_type ?? 'text' }}" name="{{ handle }}" value="{{ name }}" class="form-input form-input-fs-dark bg-black lg:text-base w-full transition duration-150 ease-in-out" />
           </td>
         </tr>
         {{ /value }}

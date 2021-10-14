@@ -1,8 +1,15 @@
-const colors = require('@tailwindcss/ui/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: [],
+  mode: 'jit',
+  purge: {
+    content: [
+      './resources/**/*.antlers.html',
+      './resources/**/*.blade.php',
+      './resources/**/*.vue',
+      './content/**/*.md'
+    ]
+  },
   theme: {
     colors: {
       transparent: 'transparent',
@@ -11,28 +18,32 @@ module.exports = {
       black: '#251E2D',
       gray: '#342B3E',
       light: '#4A3E57',
+      fs: {
+        dark: 'var(--fs-color-dark)',
+        light: 'var(--fs-color-light)'
+      },
       pop: {
-        default: '#FF269E',
+        dark: '#FF269E',
         light: '#FF5ADC'
       },
       ultraviolet: {
-        default: '#CE30FF',
+        dark: '#CE30FF',
         light: '#FB7EFF',
       },
       lightning: {
-        default: '#1DCFED',
+        dark: '#1DCFED',
         light: '#66FAFE'
       },
       glowworm: {
-        default: '#28F07E',
+        dark: '#28F07E',
         light: '#6DFABE'
       },
       firefly: {
-        default: '#FDF50C',
+        dark: '#FDF50C',
         light: '#FFFE7E'
       },
       flame: {
-        default: '#FB024C',
+        dark: '#FB024C',
         light: '#FF3D76'
       },
     },
@@ -54,7 +65,7 @@ module.exports = {
           letterSpacing: theme('letterSpacing.wide'),
           color: theme('colors.white'),
           '&::placeholder': {
-            color: theme('colors.pop.default'),
+            color: theme('colors.pop.dark'),
           },
           '&:focus': {
             boxShadow: defaultTheme.boxShadow.none,
@@ -65,45 +76,17 @@ module.exports = {
           }
         },
       },
-      pop: {
+      "fs-dark": {
         'input, textarea, multiselect, select': {
           '&::placeholder': {
-            color: theme('colors.pop.default'),
+            color: 'var(--fs-color-dark)',
           },
         },
       },
-      ultraviolet: {
+      "fs-light": {
         'input, textarea, multiselect, select': {
           '&::placeholder': {
-            color: theme('colors.ultraviolet.default'),
-          },
-        },
-      },
-      lightning: {
-        'input, textarea, multiselect, select': {
-          '&::placeholder': {
-            color: theme('colors.lightning.default'),
-          },
-        },
-      },
-      glowworm: {
-        'input, textarea, multiselect, select': {
-          '&::placeholder': {
-            color: theme('colors.glowworm.default'),
-          },
-        },
-      },
-      firefly: {
-        'input, textarea, multiselect, select': {
-          '&::placeholder': {
-            color: theme('colors.firefly.default'),
-          },
-        },
-      },
-      flame: {
-        'input, textarea, multiselect, select': {
-          '&::placeholder': {
-            color: theme('colors.flame.default'),
+            color: 'var(--fs-color-light)',
           },
         },
       },

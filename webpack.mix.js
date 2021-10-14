@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-require('laravel-mix-purgecss');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -14,13 +13,13 @@ require('laravel-mix-purgecss');
 mix.js('resources/js/site.js', 'public/js')
 
 mix.postCss('resources/css/tailwind.css', 'public/css', [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('postcss-nested'),
-    require('postcss-easing-gradients'),
-    require('postcss-scrim-gradient'),
-    require('postcss-color-function'),
-    require('postcss-preset-env')({stage: 0})
+  require('postcss-import'),
+  require('tailwindcss'),
+  require('postcss-nested'),
+  require('postcss-easing-gradients'),
+  require('postcss-scrim-gradient'),
+  require('postcss-color-function'),
+  require('postcss-preset-env')({ stage: 0 })
 ]).browserSync({
   proxy: "http://fieldset.test",
   port: '8888',
@@ -31,7 +30,7 @@ mix.postCss('resources/css/tailwind.css', 'public/css', [
 });
 
 if (mix.inProduction()) {
-   mix.version();
+  mix.version();
 }
 
 /*
@@ -44,10 +43,12 @@ if (mix.inProduction()) {
  |
  */
 
-// mix.js('resources/js/cp.js', 'public/vendor/app/js')
-//    .postCss('resources/css/cp.css', 'public/vendor/app/css', [
-//     require('postcss-import'),
-//     require('tailwindcss'),
-//     require('postcss-nested'),
-//     require('postcss-preset-env')({stage: 0})
-// ])
+
+mix.js('resources/js/cp.js', 'public/vendor/app/js').vue();
+
+mix.postCss('resources/css/cp.css', 'public/vendor/app/css', [
+  require('postcss-import'),
+  require('tailwindcss'),
+  require('postcss-nested'),
+  require('postcss-preset-env')({ stage: 0 })
+]);

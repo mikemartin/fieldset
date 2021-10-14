@@ -1,0 +1,5 @@
+---
+title: '{{ title }}'
+id: example-{{ id }}
+blueprint: {{ blueprint }}
+---

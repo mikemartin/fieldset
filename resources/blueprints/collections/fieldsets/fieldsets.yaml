@@ -4,26 +4,35 @@ sections:
     display: Main
     fields:
       -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
         handle: icon
         field:
           mode: list
           container: assets
           folder: icons
-          restrict: false
+          restrict: true
           allow_uploads: true
+          show_filename: true
           max_files: 1
-          type: assets
-          localizable: false
-          listable: hidden
           display: Icon
+          type: assets
+          icon: assets
+          instructions: 'SVG icon'
           width: 50
+          listable: hidden
+          instructions_position: above
       -
         handle: author
         field:
           max_items: 1
           mode: default
           type: users
-          localizable: false
           listable: hidden
           display: Author
           width: 50
@@ -33,47 +42,62 @@ sections:
         handle: subtitle
         field:
           type: textarea
-          localizable: false
           listable: hidden
           display: Subtitle
       -
         handle: description
         field:
-          input_type: text
-          type: text
-          localizable: false
-          listable: hidden
+          container: assets
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: true
+          antlers: false
           display: Description
-      -
-        handle: example
-        field:
-          theme: material
-          mode: yaml
-          indent_type: tabs
-          indent_size: 4
-          key_map: default
-          line_numbers: true
-          line_wrapping: true
-          type: code
-          localizable: false
+          type: markdown
+          icon: markdown
           listable: hidden
-          display: Example
+          instructions_position: above
       -
         handle: fieldset
         field:
-          theme: material
-          mode: yaml
-          indent_type: tabs
-          indent_size: 4
-          key_map: default
-          line_numbers: true
-          line_wrapping: true
-          type: code
-          localizable: false
+          type: fieldset_selector
           listable: hidden
           display: Fieldset
+      -
+        handle: example
+        field:
+          max_items: 1
+          mode: default
+          type: entries
+          listable: hidden
+          display: Example
+          collections:
+            - examples
+      -
+        handle: downloads
+        field:
+          input_type: text
+          antlers: false
+          display: Downloads
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
   seo:
     display: SEO
     fields:
       -
         import: seo_meta
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required

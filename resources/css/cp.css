@@ -1,1 +1,46 @@
 /* This is all you. */
+
+html .fieldset-card {
+  @apply overflow-hidden bg-light text-white text-opacity-75 rounded-md block w-full transition duration-150 ease-in-out transform cursor-pointer;
+}
+
+html .media-object { 
+  @apply p-6 flex-1 flex items-start space-x-5;
+}
+
+html .fieldset-color--pop { 
+  @apply text-pop-dark;
+}
+
+html .media-object--image { 
+  @apply flex w-12 h-12 text-pop-dark;
+}
+
+html .fieldset-card-small-icon {
+  @apply w-6 h-6 mr-3;
+}
+html .fieldset-card-option { 
+  @apply flex items-center py-1;
+}
+
+html .fieldset-card:hover .media-object--image { 
+  @apply text-pop-light;
+}
+
+html .fieldset-card--title { 
+  @apply w-full lg:flex lg:justify-between font-bold lg:items-center text-white leading-6 lg:leading-7 text-base lg:text-lg;
+}
+
+html .fieldset-card--subtitle { 
+  @apply mt-1 text-sm leading-5;
+  color: inherit;
+}
+
+html .fieldset-card--footer { 
+  @apply px-6 py-4 flex justify-between items-center border-t border-black border-opacity-50;
+}
+
+html .author-name {
+  @apply text-sm leading-5;
+  color: inherit;
+}
