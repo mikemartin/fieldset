@@ -19,7 +19,7 @@
         "postcss-easing-gradients": "^3.0.1",
         "postcss-scrim-gradient": "github:mpeutz/postcss-simple-scrim",
         "autoprefixer": "^10.2.5",
-        "browser-sync": "^2.27.5",
+        "browser-sync": "^2.27.10",
         "browser-sync-webpack-plugin": "2.3.0",
         "cross-env": "^7.0",
         "laravel-mix": "^6.0",
